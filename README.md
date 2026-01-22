@@ -1,36 +1,89 @@
-# gokaydervisoglu.com
+# Gökay Dervişoğlu - Portfolio
 
-Personal portfolio website of **Gökay Dervişoğlu**, a Computer Engineering student specializing in AI-powered solutions, embedded systems, and innovative projects with expertise in deep learning, computer vision, and autonomous systems.
+Personal portfolio website showcasing my projects, experience, and achievements in aerospace engineering and software development.
 
-## 🌐 Website
+## About
 
-Visit the live site at [gokaydervisoglu.com](https://gokaydervisoglu.com)
+This portfolio highlights my work in:
 
-## 📁 Project Structure
+- Autonomous systems and UAV development
+- Computer vision and AI applications
+- Aerospace engineering projects
+- Technical competitions and achievements
 
-- **index.html**: Homepage with hero section
-- **html/about.html**: About page with experience section
-- **html/projects.html**: Projects showcase with detailed cards
-- **html/contact.html**: Contact form and information
-- **css/**: Stylesheets for each page
-- **js/**: JavaScript for interactivity
-- **image/**: Assets (profile images, favicon)
+## Tech Stack
 
-## 🚀 Features
+- **Framework:** Next.js 16
+- **UI Library:** Once UI
+- **Styling:** SASS/SCSS
+- **Content:** MDX
+- **Deployment:** Vercel
 
-- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Project Showcase**: Detailed project cards with descriptions and technologies
-- **Interactive Elements**: Hamburger menu, form validation, live clock
+## Getting Started
 
-## 🛠️ Technologies
+### Prerequisites
 
-- **HTML5** & **CSS3** - Structure and styling
-- **JavaScript** - Interactivity and dynamic content
-- **GitHub Pages** - Hosting and deployment
+- Node.js v18.17 or higher
+- npm or yarn
 
-## 📬 Contact
+### Installation
 
-Email: [gokaydervisoglu@gmail.com](mailto:gokaydervisoglu@gmail.com)  
-LinkedIn: [linkedin.com/in/gokaydervisoglu](https://www.linkedin.com/in/gokaydervisoglu/)  
-Location: Trabzon, Turkey
+1. Clone the repository
+
+```bash
+git clone https://github.com/gokaydervisoglu/portfolio.git
+cd portfolio
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run the development server
+
+```bash
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Project Structure
+
+```
+├── src/
+│   ├── app/              # Next.js app directory
+│   │   ├── about/        # About/CV page
+│   │   ├── blog/         # Blog posts
+│   │   ├── contact/      # Contact page
+│   │   ├── gallery/      # Photo gallery
+│   │   └── work/         # Projects showcase
+│   ├── components/       # React components
+│   ├── resources/        # Configuration and content
+│   └── utils/            # Utility functions
+├── public/               # Static assets
+│   └── images/           # Images and media
+└── package.json
+```
+
+## Features
+
+- 🎨 Modern, responsive design
+- 📱 Mobile-friendly interface
+- 🌙 Dark/Light theme support
+- 📝 MDX-based blog and project pages
+- 🖼️ Photo gallery
+- 📧 Contact form
+- 🔍 SEO optimized
+- 🚀 Fast performance with Next.js
+
+## Contact
+
+- **Email:** [gokaydervisoglu@gmail.com](mailto:gokaydervisoglu@gmail.com)
+- **LinkedIn:** [linkedin.com/in/gokaydervisoglu](https://www.linkedin.com/in/gokaydervisoglu/)
+- **GitHub:** [@gokaydervisoglu](https://github.com/gokaydervisoglu)
+
+## License
+
+© 2026 Gökay Dervişoğlu. All rights reserved.

@@ -1,1 +1,0 @@
-// About text is now displayed fully without toggle functionality
