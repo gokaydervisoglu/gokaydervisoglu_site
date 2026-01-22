@@ -152,6 +152,8 @@ export interface About extends BasePageConfig {
       timeframe: string;
       /** Role or job title */
       role: string;
+      /** Location of the work experience */
+      location?: string;
       /** Achievements at the company */
       achievements: React.ReactNode[];
       /** Images related to the experience */
@@ -179,6 +181,8 @@ export interface About extends BasePageConfig {
       name: string;
       /** Description of studies */
       description: React.ReactNode;
+      /** Timeframe of studies */
+      timeframe?: string;
     }>;
   };
   /** Technical skills section */
