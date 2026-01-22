@@ -51,9 +51,9 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
           <Text variant="heading-strong-l" wrap="balance">
             {post.metadata.title}
           </Text>
-          {post.metadata.tag && (
+          {post.metadata.tags && post.metadata.tags.length > 0 && (
             <Text variant="label-strong-s" onBackground="neutral-weak">
-              {post.metadata.tag}
+              {post.metadata.tags[0]}
             </Text>
           )}
         </Column>
