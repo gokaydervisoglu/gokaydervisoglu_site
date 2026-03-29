@@ -14,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { Providers } from "@/components";
 import { effects, fonts, style, dataStyle } from "@/resources";
+import { Analytics } from "@vercel/analytics/next";
 
 export default async function RootLayout({
   children,
@@ -143,6 +144,7 @@ export default async function RootLayout({
           {children}
         </Column>
       </Providers>
+      <Analytics />
     </Flex>
   );
 }
