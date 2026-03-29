@@ -100,16 +100,31 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Kafein Technology Solutions",
-        timeframe: "June 2025 - August 2025",
-        role: "Software Development Intern",
+        company: "Turkcell",
+        timeframe: "February 2026 – May 2026 (Ongoing)",
+        role: "Software Test Intern",
         location: "Istanbul, Turkey",
         achievements: [
           <>
-            Learning and gaining hands-on experience with Dataskope and its Data Touch module for data governance and policy management.
+            Web Service (API) and UI test scenarios are designed and executed.
           </>,
           <>
-            Gained hands-on experience in enterprise security solutions and data protection strategies.
+            System behavior is analyzed during testing processes to detect defects and support validation activities.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Kafein Bilişim A.Ş.",
+        timeframe: "June – August 2025",
+        role: "Information Security & Management Intern",
+        location: "Istanbul, Turkey",
+        achievements: [
+          <>
+            Worked on cybersecurity processes and information management.
+          </>,
+          <>
+            Conducted log analysis and examined basic security procedures.
           </>,
         ],
         images: [],

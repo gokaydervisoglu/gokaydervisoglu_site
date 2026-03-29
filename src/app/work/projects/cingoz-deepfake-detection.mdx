@@ -1,0 +1,44 @@
+---
+title: "CİNGÖZ — Deepfake Detection System"
+publishedAt: "2025-05-01"
+summary: "Developed a deepfake detection system using StyleGAN3-based fake face generation combined with micro facial movement and blink analysis to distinguish real from synthetic media."
+images:
+  - "/images/projects/cingoz/cover.jpg"
+team:
+  - name: "Gökay Dervişoğlu"
+    role: "AI/ML Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/gokaydervisoglu/"
+tags:
+  - "Deep Learning"
+  - "Computer Vision"
+  - "AI"
+  - "Python"
+  - "GAN"
+---
+
+## Overview
+
+CİNGÖZ is a deepfake detection system designed to identify AI-generated or manipulated facial media. The system leverages StyleGAN3-based synthetic face generation for training data alongside micro facial movement and eye blink analysis to reliably distinguish real from fake content.
+
+## Key Features
+
+- **Synthetic Data Generation**: Utilized StyleGAN3 to generate realistic fake face datasets for model training and evaluation.
+- **Micro Facial Movement Analysis**: Analyzed subtle facial motion patterns that differ between real and AI-generated video sequences.
+- **Blink Detection**: Implemented eye blink analysis as a liveness indicator, exploiting the tendency of deepfake models to produce unnatural blinking behavior.
+- **Binary Classification**: Built an end-to-end pipeline to classify media as authentic or deepfake.
+
+## Technical Approach
+
+The detection pipeline combines two complementary strategies:
+
+1. **GAN-based Training Data**: StyleGAN3 was used to produce high-quality synthetic faces, enabling robust model training with diverse fake samples.
+2. **Temporal Behavioral Analysis**: Micro facial movements and blink patterns were extracted from video frames using computer vision techniques to capture liveness cues.
+
+## Technologies Used
+
+- **Python**: Primary development language
+- **StyleGAN3**: State-of-the-art generative adversarial network for synthetic face generation
+- **OpenCV**: Video processing and facial feature extraction
+- **PyTorch**: Deep learning model training and inference
+- **MediaPipe / dlib**: Facial landmark detection for blink and movement analysis
