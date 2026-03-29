@@ -217,19 +217,24 @@ export default async function About({
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
+            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="l">
               {about.intro.description}
             </Column>
           )}
 
           {about.work.display && (
             <>
+              <hr className={styles.sectionDivider} />
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="l" marginBottom="l">
                 {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
+                  <Column
+                    key={`${experience.company}-${experience.role}-${index}`}
+                    fillWidth
+                    className={styles.card}
+                  >
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
@@ -264,9 +269,9 @@ export default async function About({
                     </Column>
                     {experience.images && experience.images.length > 0 && (
                       <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
+                        {experience.images.map((image, imgIdx) => (
                           <Row
-                            key={index}
+                            key={imgIdx}
                             border="neutral-medium"
                             radius="m"
                             minWidth={image.width}
@@ -289,92 +294,105 @@ export default async function About({
             </>
           )}
 
-          {about.studies.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.studies.title}
-                variant="display-strong-s"
-                marginBottom="m"
-              >
-                {about.studies.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Text id={institution.name} variant="heading-strong-l">
+          <hr className={styles.sectionDivider} />
+
+          <div className={styles.gridRow}>
+            {about.studies.display && (
+              <div className={styles.gridLeft}>
+                <Heading
+                  as="h2"
+                  id={about.studies.title}
+                  variant="display-strong-s"
+                  marginBottom="m"
+                >
+                  {about.studies.title}
+                </Heading>
+                <Column fillWidth gap="l">
+                  {about.studies.institutions.map((institution, index) => (
+                    <Column
+                      key={`${institution.name}-${index}`}
+                      fillWidth
+                      className={styles.card}
+                    >
+                      <Text id={institution.name} variant="heading-strong-l" marginBottom="4">
                         {institution.name}
                       </Text>
+                      <Text variant="body-default-m" onBackground="neutral-weak" marginBottom="4">
+                        {institution.description}
+                      </Text>
                       {institution.timeframe && (
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {institution.timeframe}
-                        </Text>
+                        <Row gap="4" vertical="center">
+                          <Icon size="xs" onBackground="neutral-weak" name="calendar" />
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {institution.timeframe}
+                          </Text>
+                        </Row>
                       )}
-                    </Row>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
+                    </Column>
+                  ))}
+                </Column>
+              </div>
+            )}
 
-          {about.technical.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="40"
-              >
-                {about.technical.title}
-              </Heading>
-              <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill.title}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
-                      {skill.title}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="8">
-                        {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
-                            {tag.name}
-                          </Tag>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
+            {about.technical.display && (
+              <div className={styles.gridRight}>
+                <Heading
+                  as="h2"
+                  id={about.technical.title}
+                  variant="display-strong-s"
+                  marginBottom="m"
+                >
+                  {about.technical.title}
+                </Heading>
+                <Column fillWidth gap="l">
+                  {about.technical.skills.map((skill, index) => (
+                    <Column
+                      key={`${skill.title}-${index}`}
+                      fillWidth
+                      className={styles.card}
+                    >
+                      <Text id={skill.title} variant="heading-strong-l" marginBottom="4">
+                        {skill.title}
+                      </Text>
+                      <Text variant="body-default-m" onBackground="neutral-weak">
+                        {skill.description}
+                      </Text>
+                      {skill.tags && skill.tags.length > 0 && (
+                        <Row wrap gap="8" paddingTop="12">
+                          {skill.tags.map((tag, tagIndex) => (
+                            <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
+                              {tag.name}
+                            </Tag>
+                          ))}
+                        </Row>
+                      )}
+                      {skill.images && skill.images.length > 0 && (
+                        <Row fillWidth paddingTop="m" gap="12" wrap>
+                          {skill.images.map((image, imgIdx) => (
+                            <Row
+                              key={imgIdx}
+                              border="neutral-medium"
                               radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
+                              minWidth={image.width}
+                              height={image.height}
+                            >
+                              <Media
+                                enlarge
+                                radius="m"
+                                sizes={image.width.toString()}
+                                alt={image.alt}
+                                src={image.src}
+                              />
+                            </Row>
+                          ))}
+                        </Row>
+                      )}
+                    </Column>
+                  ))}
+                </Column>
+              </div>
+            )}
+          </div>
         </Column>
       </Row>
     </Column>
