@@ -131,7 +131,7 @@ export default async function Project({
         }}
       />
       <Column maxWidth="s" gap="16" horizontal="center" align="center">
-        <SmartLink href="/work">
+        <SmartLink href={locale === "tr" ? "/tr/work" : "/work"}>
           <Text variant="label-strong-m">{t("work.backToProjects")}</Text>
         </SmartLink>
 

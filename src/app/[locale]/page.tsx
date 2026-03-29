@@ -102,7 +102,7 @@ export default async function Home({
               <Button
                 id="projects"
                 data-border="rounded"
-                href="/work"
+                href={locale === "tr" ? "/tr/work" : "/work"}
                 variant="primary"
                 size="m"
                 arrowIcon
@@ -112,7 +112,7 @@ export default async function Home({
               <Button
                 id="contact"
                 data-border="rounded"
-                href="/contact"
+                href={locale === "tr" ? "/tr/contact" : "/contact"}
                 variant="secondary"
                 size="m"
               >

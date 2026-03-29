@@ -76,6 +76,11 @@ export const Header = () => {
 
   const navLabel = (key: string) => t(`nav.${key}`);
 
+  // Adds locale prefix to hrefs so navigation preserves the current locale.
+  // Default locale ("en") uses no prefix (localePrefix: "as-needed").
+  const localePath = (path: string) =>
+    clientLocale === "tr" ? `/tr${path}` : path;
+
   return (
     <>
       <Fade s={{ hide: true }} fillWidth position="fixed" height="80" zIndex={9} />
@@ -161,7 +166,7 @@ export const Header = () => {
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton prefixIcon="home" href={localePath("/")} selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/about"] && (
@@ -169,7 +174,7 @@ export const Header = () => {
                   <Row s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="person"
-                      href="/about"
+                      href={localePath("/about")}
                       label={navLabel("about")}
                       selected={pathname === "/about"}
                     />
@@ -177,7 +182,7 @@ export const Header = () => {
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="person"
-                      href="/about"
+                      href={localePath("/about")}
                       selected={pathname === "/about"}
                     />
                   </Row>
@@ -188,7 +193,7 @@ export const Header = () => {
                   <Row s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="grid"
-                      href="/work"
+                      href={localePath("/work")}
                       label={navLabel("work")}
                       selected={pathname.startsWith("/work")}
                     />
@@ -196,7 +201,7 @@ export const Header = () => {
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="grid"
-                      href="/work"
+                      href={localePath("/work")}
                       selected={pathname.startsWith("/work")}
                     />
                   </Row>
@@ -207,7 +212,7 @@ export const Header = () => {
                   <Row s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="book"
-                      href="/blog"
+                      href={localePath("/blog")}
                       label={navLabel("blog")}
                       selected={pathname.startsWith("/blog")}
                     />
@@ -215,7 +220,7 @@ export const Header = () => {
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="book"
-                      href="/blog"
+                      href={localePath("/blog")}
                       selected={pathname.startsWith("/blog")}
                     />
                   </Row>
@@ -226,7 +231,7 @@ export const Header = () => {
                   <Row s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="gallery"
-                      href="/gallery"
+                      href={localePath("/gallery")}
                       label={navLabel("gallery")}
                       selected={pathname.startsWith("/gallery")}
                     />
@@ -234,7 +239,7 @@ export const Header = () => {
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="gallery"
-                      href="/gallery"
+                      href={localePath("/gallery")}
                       selected={pathname.startsWith("/gallery")}
                     />
                   </Row>
@@ -245,7 +250,7 @@ export const Header = () => {
                   <Row s={{ hide: true }}>
                     <ToggleButton
                       prefixIcon="email"
-                      href="/contact"
+                      href={localePath("/contact")}
                       label={navLabel("contact")}
                       selected={pathname.startsWith("/contact")}
                     />
@@ -253,7 +258,7 @@ export const Header = () => {
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
                       prefixIcon="email"
-                      href="/contact"
+                      href={localePath("/contact")}
                       selected={pathname.startsWith("/contact")}
                     />
                   </Row>

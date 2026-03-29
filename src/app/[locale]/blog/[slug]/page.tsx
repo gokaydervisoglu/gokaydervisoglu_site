@@ -102,7 +102,7 @@ export default async function BlogPost({
             }}
           />
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
-            <SmartLink href="/blog">
+            <SmartLink href={locale === "tr" ? "/tr/blog" : "/blog"}>
               <Text variant="label-strong-m">Blog</Text>
             </SmartLink>
             <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
