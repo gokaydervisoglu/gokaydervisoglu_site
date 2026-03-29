@@ -1,0 +1,44 @@
+---
+title: "CİNGÖZ — Deepfake Tespit Sistemi"
+publishedAt: "2025-05-01"
+summary: "StyleGAN3 tabanlı sahte yüz üretimini mikro yüz hareketi ve göz kırpma analiziyle birleştirerek gerçek medyayı sentetikten ayıran bir deepfake tespit sistemi geliştirildi."
+images:
+  - "/images/projects/cingoz/cover.jpg"
+team:
+  - name: "Gökay Dervişoğlu"
+    role: "AI/ML Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/gokaydervisoglu/"
+tags:
+  - "Deep Learning"
+  - "Computer Vision"
+  - "AI"
+  - "Python"
+  - "GAN"
+---
+
+## Genel Bakış
+
+CİNGÖZ, yapay zekâ tarafından üretilmiş veya manipüle edilmiş yüz medyasını tespit etmek için tasarlanmış bir deepfake tespit sistemidir. Sistem, model eğitimi için StyleGAN3 tabanlı sentetik yüz üretimini; gerçek ve sahte içeriği güvenilir şekilde ayırt etmek için mikro yüz hareketi ve göz kırpma analizini bir arada kullanır.
+
+## Öne Çıkan Özellikler
+
+- **Sentetik Veri Üretimi**: Model eğitimi ve değerlendirmesi için gerçekçi sahte yüz veri kümeleri üretmek üzere StyleGAN3 kullanıldı.
+- **Mikro Yüz Hareketi Analizi**: Gerçek ve yapay zekâ üretimi video dizileri arasında farklılık gösteren ince yüz hareketi örüntüleri analiz edildi.
+- **Kırpma Tespiti**: Deepfake modellerinin doğal olmayan kırpma davranışı üretme eğiliminden yararlanılarak canlılık göstergesi olarak göz kırpma analizi uygulandı.
+- **İkili Sınıflandırma**: Medyayı otantik veya deepfake olarak sınıflandıran uçtan uca bir boru hattı kuruldu.
+
+## Teknik Yaklaşım
+
+Tespit boru hattı iki tamamlayıcı stratejiyi birleştirir:
+
+1. **GAN Tabanlı Eğitim Verisi**: Çeşitli sahte örneklerle sağlam model eğitimi için yüksek kaliteli sentetik yüzler üretmek üzere StyleGAN3 kullanıldı.
+2. **Zamansal Davranış Analizi**: Canlılık ipuçlarını yakalamak için bilgisayarlı görü teknikleriyle video karelerinden mikro yüz hareketleri ve kırpma örüntüleri çıkarıldı.
+
+## Kullanılan Teknolojiler
+
+- **Python**: Birincil geliştirme dili
+- **StyleGAN3**: Sentetik yüz üretimi için son teknoloji generative adversarial network
+- **OpenCV**: Video işleme ve yüz özelliği çıkarımı
+- **PyTorch**: Derin öğrenme modeli eğitimi ve çıkarımı
+- **MediaPipe / dlib**: Kırpma ve hareket analizi için yüz landmark tespiti

@@ -6,7 +6,6 @@ import {
   Column,
   Heading,
   HeadingNav,
-  Icon,
   Row,
   Text,
   SmartLink,
@@ -14,13 +13,14 @@ import {
   Media,
   Line,
 } from "@once-ui-system/core";
-import { baseURL, about, blog, person } from "@/resources";
+import { baseURL, renderContent } from "@/resources";
+import { person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from "next";
-import React from "react";
 import { Posts } from "@/components/blog/Posts";
 import { ShareSection } from "@/components/blog/ShareSection";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "blog", "posts"]);
@@ -32,12 +32,16 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string | string[] }>;
+  params: Promise<{ slug: string | string[]; locale: string }>;
 }): Promise<Metadata> {
   const routeParams = await params;
+  const locale = routeParams.locale;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
+
+  const t = await getTranslations({ locale });
+  const { blog } = renderContent(t);
 
   const posts = getPosts(["src", "app", "blog", "posts"]);
   let post = posts.find((post) => post.slug === slugPath);
@@ -53,22 +57,26 @@ export async function generateMetadata({
   });
 }
 
-export default async function Blog({ params }: { params: Promise<{ slug: string | string[] }> }) {
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string | string[]; locale: string }>;
+}) {
   const routeParams = await params;
+  const locale = routeParams.locale;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
+
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale });
+  const { blog, about } = renderContent(t);
 
   let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === slugPath);
 
   if (!post) {
     notFound();
   }
-
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
 
   return (
     <Row fillWidth>
@@ -101,16 +109,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
               {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
             </Text>
             <Heading variant="display-strong-m">{post.metadata.title}</Heading>
-            {post.metadata.subtitle && (
-              <Text 
-                variant="body-default-l" 
-                onBackground="neutral-weak" 
-                align="center"
-                style={{ fontStyle: 'italic' }}
-              >
-                {post.metadata.subtitle}
-              </Text>
-            )}
           </Column>
           <Row marginBottom="32" horizontal="center">
             <Row gap="16" vertical="center">
@@ -136,17 +134,14 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           <Column as="article" maxWidth="s">
             <CustomMDX source={post.content} />
           </Column>
-          
-          <ShareSection 
-            title={post.metadata.title} 
-            url={`${baseURL}${blog.path}/${post.slug}`} 
+
+          <ShareSection
+            title={post.metadata.title}
+            url={`${baseURL}${blog.path}/${post.slug}`}
           />
 
           <Column fillWidth gap="40" horizontal="center" marginTop="40">
             <Line maxWidth="40" />
-            <Text as="h2" id="recent-posts" variant="heading-strong-xl" marginBottom="24">
-              Recent posts
-            </Text>
             <Posts exclude={[post.slug]} range={[1, 2]} columns="2" thumbnail direction="column" />
           </Column>
           <ScrollToHash />

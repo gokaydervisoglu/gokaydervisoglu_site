@@ -1,17 +1,20 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import { useEffect, useState, useTransition } from "react";
 
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
+import { Fade, Flex, Line, Row, Text, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery, contact } from "@/resources";
+import { routes, display } from "@/resources";
+import { routing, usePathname, useRouter } from "@/i18n/routing";
+import type { Locale } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
@@ -43,7 +46,35 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
 export default TimeDisplay;
 
 export const Header = () => {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
   const pathname = usePathname() ?? "";
+  const params = useParams();
+  const t = useTranslations();
+
+  // params.locale from [locale] segment; fall back to checking window.location
+  const currentLocale = (params?.locale as string) || "en";
+
+  // Derived: is page currently showing Turkish?
+  const [clientLocale, setClientLocale] = useState(currentLocale);
+  useEffect(() => {
+    // Sync with actual URL locale on client (handles edge cases)
+    const urlLocale = typeof window !== "undefined" && window.location.pathname.startsWith("/tr") ? "tr" : "en";
+    setClientLocale(urlLocale);
+  }, [pathname]);
+
+  function handleLanguageChange(locale: string) {
+    const nextLocale = locale as Locale;
+    startTransition(() => {
+      router.replace(
+        // pathname is already locale-stripped by next-intl's usePathname
+        pathname || "/",
+        { locale: nextLocale }
+      );
+    });
+  }
+
+  const navLabel = (key: string) => t(`nav.${key}`);
 
   return (
     <>
@@ -58,6 +89,24 @@ export const Header = () => {
         height="80"
         zIndex={9}
       />
+
+      {/* Mobile language switcher - fixed side card */}
+      {routing.locales.length > 1 && (
+        <button
+          onClick={() => {
+            const nextLocale = clientLocale === "en" ? "tr" : "en";
+            handleLanguageChange(nextLocale);
+          }}
+          disabled={isPending}
+          style={{
+            opacity: isPending ? 0.6 : 1,
+          }}
+          className={styles.mobileLangButton}
+        >
+          <Text variant="label-strong-s">{clientLocale.toUpperCase()}</Text>
+        </button>
+      )}
+
       <Row
         fitHeight
         className={styles.position}
@@ -72,8 +121,34 @@ export const Header = () => {
           position: "fixed",
         }}
       >
+        {/* Desktop language switcher - left side */}
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
+          {routing.locales.length > 1 && (
+            <Row
+              s={{ hide: true }}
+              background="page"
+              border="neutral-alpha-weak"
+              radius="m-4"
+              shadow="l"
+              padding="4"
+              gap="2"
+              horizontal="center"
+            >
+              {routing.locales.map((locale) => (
+                <ToggleButton
+                  key={locale}
+                  selected={clientLocale === locale}
+                  onClick={() => handleLanguageChange(locale)}
+                  className={isPending ? "pointer-events-none opacity-60" : ""}
+                >
+                  {locale.toUpperCase()}
+                </ToggleButton>
+              ))}
+            </Row>
+          )}
         </Row>
+
+        {/* Navigation */}
         <Row fillWidth horizontal="center">
           <Row
             background="page"
@@ -95,7 +170,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="person"
                       href="/about"
-                      label={about.label}
+                      label={navLabel("about")}
                       selected={pathname === "/about"}
                     />
                   </Row>
@@ -114,7 +189,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="grid"
                       href="/work"
-                      label={work.label}
+                      label={navLabel("work")}
                       selected={pathname.startsWith("/work")}
                     />
                   </Row>
@@ -133,7 +208,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="book"
                       href="/blog"
-                      label={blog.label}
+                      label={navLabel("blog")}
                       selected={pathname.startsWith("/blog")}
                     />
                   </Row>
@@ -152,7 +227,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="gallery"
                       href="/gallery"
-                      label={gallery.label}
+                      label={navLabel("gallery")}
                       selected={pathname.startsWith("/gallery")}
                     />
                   </Row>
@@ -171,7 +246,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="email"
                       href="/contact"
-                      label={contact.label}
+                      label={navLabel("contact")}
                       selected={pathname.startsWith("/contact")}
                     />
                   </Row>
@@ -193,6 +268,8 @@ export const Header = () => {
             </Row>
           </Row>
         </Row>
+
+        {/* Time display */}
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex
             paddingRight="12"
@@ -202,7 +279,7 @@ export const Header = () => {
             gap="20"
           >
             <Flex s={{ hide: true }}>
-              {display.time && <TimeDisplay timeZone={person.location} />}
+              {display.time && <TimeDisplay timeZone="Europe/Istanbul" />}
             </Flex>
           </Flex>
         </Flex>

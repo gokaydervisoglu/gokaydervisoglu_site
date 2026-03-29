@@ -11,12 +11,13 @@ import {
   Button,
   Input,
   Textarea,
-  Meta,
 } from "@once-ui-system/core";
 import { person, social } from "@/resources";
-import styles from "./contact.module.scss";
+import styles from "@/app/[locale]/contact/contact.module.scss";
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
+  const t = useTranslations("contact");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,23 +41,23 @@ export default function Contact() {
     const { name, email, message } = formData;
 
     if (!name.trim()) {
-      showToast("Please enter your name", "error");
+      showToast(t("errorName"), "error");
       return;
     }
 
     if (!email.trim() || !validateEmail(email)) {
-      showToast("Please enter a valid email address", "error");
+      showToast(t("errorEmail"), "error");
       return;
     }
 
     if (!message.trim()) {
-      showToast("Please enter your message", "error");
+      showToast(t("errorMessage"), "error");
       return;
     }
 
     const mailtoLink = `mailto:${person.email}?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\n---\nSent from gokaydervisoglu.github.io")}`;
 
-    showToast("Redirecting to email client...", "success");
+    showToast(t("successRedirect"), "success");
 
     setTimeout(() => {
       window.location.href = mailtoLink;
@@ -76,14 +77,13 @@ export default function Contact() {
   return (
     <Column maxWidth="l" fillWidth gap="xl" horizontal="center" paddingY="xl">
       <Column maxWidth="s" horizontal="center" align="center" gap="m">
-        <Heading variant="display-strong-l">Get In Touch</Heading>
+        <Heading variant="display-strong-l">{t("heading")}</Heading>
         <Text variant="body-default-l" onBackground="neutral-weak" align="center">
-          Have a question or want to work together? Feel free to reach out!
+          {t("subtitle")}
         </Text>
       </Column>
 
       <Row fillWidth gap="xl" horizontal="center" className={styles.contactRow}>
-        {/* Contact Info Cards */}
         <Column gap="m" className={styles.contactColumn}>
           <Card
             className={styles.contactCard}
@@ -96,7 +96,7 @@ export default function Contact() {
                 <Icon name="email" size="l" onBackground="brand-strong" />
               </div>
               <Column gap="4">
-                <Text variant="label-strong-m">Email</Text>
+                <Text variant="label-strong-m">{t("email")}</Text>
                 <Text variant="body-default-s" onBackground="neutral-weak">
                   {person.email}
                 </Text>
@@ -115,9 +115,9 @@ export default function Contact() {
                 <Icon name="globe" size="l" onBackground="brand-strong" />
               </div>
               <Column gap="4">
-                <Text variant="label-strong-m">Location</Text>
+                <Text variant="label-strong-m">{t("location")}</Text>
                 <Text variant="body-default-s" onBackground="neutral-weak">
-                  Trabzon, Turkey
+                  {t("locationValue")}
                 </Text>
               </Column>
             </Row>
@@ -135,9 +135,9 @@ export default function Contact() {
                 <Icon name="linkedin" size="l" onBackground="brand-strong" />
               </div>
               <Column gap="4">
-                <Text variant="label-strong-m">LinkedIn</Text>
+                <Text variant="label-strong-m">{t("linkedin")}</Text>
                 <Text variant="body-default-s" onBackground="neutral-weak">
-                  Connect with me
+                  {t("linkedinDesc")}
                 </Text>
               </Column>
             </Row>
@@ -155,16 +155,15 @@ export default function Contact() {
                 <Icon name="github" size="l" onBackground="brand-strong" />
               </div>
               <Column gap="4">
-                <Text variant="label-strong-m">GitHub</Text>
+                <Text variant="label-strong-m">{t("github")}</Text>
                 <Text variant="body-default-s" onBackground="neutral-weak">
-                  Check out my projects
+                  {t("githubDesc")}
                 </Text>
               </Column>
             </Row>
           </Card>
         </Column>
 
-        {/* Contact Form */}
         <Card
           className={styles.formCard}
           padding="xl"
@@ -172,40 +171,40 @@ export default function Contact() {
           border="neutral-alpha-weak"
         >
           <Column gap="l" fillHeight className={styles.formContent}>
-            <Heading variant="heading-strong-l">Send Message</Heading>
+            <Heading variant="heading-strong-l">{t("sendMessage")}</Heading>
             <form onSubmit={handleSubmit} className={styles.form}>
               <Column gap="m" fillHeight>
                 <Column gap="8">
-                  <Text variant="label-default-s">Name</Text>
+                  <Text variant="label-default-s">{t("nameLabel")}</Text>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder={t("namePlaceholder")}
                   />
                 </Column>
 
                 <Column gap="8">
-                  <Text variant="label-default-s">Email</Text>
+                  <Text variant="label-default-s">{t("emailLabel")}</Text>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your.email@example.com"
+                    placeholder={t("emailPlaceholder")}
                   />
                 </Column>
 
                 <Column gap="8">
-                  <Text variant="label-default-s">Message</Text>
+                  <Text variant="label-default-s">{t("messageLabel")}</Text>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Your message here..."
+                    placeholder={t("messagePlaceholder")}
                     rows={5}
                   />
                 </Column>
@@ -217,7 +216,7 @@ export default function Contact() {
                   fillWidth
                   suffixIcon="arrowRight"
                 >
-                  Send Message
+                  {t("sendButton")}
                 </Button>
               </Column>
             </form>
@@ -225,11 +224,8 @@ export default function Contact() {
         </Card>
       </Row>
 
-      {/* Toast Notification */}
       {toast && (
-        <div className={`${styles.toast} ${styles[toast.type]}`}>
-          {toast.message}
-        </div>
+        <div className={`${styles.toast} ${styles[toast.type]}`}>{toast.message}</div>
       )}
     </Column>
   );

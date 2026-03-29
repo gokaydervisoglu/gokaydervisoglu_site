@@ -13,6 +13,13 @@ import {
 } from "@/types";
 import { home } from "./index";
 
+const i18n = true;
+
+const i18nOptions = {
+  locales: ["en", "tr"] as const,
+  defaultLocale: "en" as const,
+};
+
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://gokaydervisoglu.github.io";
 
@@ -227,4 +234,6 @@ export {
   socialSharing,
   effects,
   dataStyle,
+  i18n,
+  i18nOptions,
 };

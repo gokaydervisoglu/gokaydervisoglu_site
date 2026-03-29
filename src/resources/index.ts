@@ -1,4 +1,3 @@
-// import a pre-defined template for config and content options
 export {
   person,
   social,
@@ -24,4 +23,8 @@ export {
   socialSharing,
   effects,
   dataStyle,
+  i18n,
+  i18nOptions,
 } from "./once-ui.config";
+
+export { renderContent } from "./renderContent";

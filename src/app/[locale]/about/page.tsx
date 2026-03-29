@@ -12,12 +12,22 @@ import {
   Schema,
   Row,
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, renderContent } from "@/resources";
+import { person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  const { about } = renderContent(t);
+
   return Meta.generate({
     title: about.title,
     description: about.description,
@@ -27,7 +37,17 @@ export async function generateMetadata() {
   });
 }
 
-export default function About() {
+export default async function About({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale });
+  const { about, person: translatedPerson } = renderContent(t);
+
   const structure = [
     {
       title: about.intro.title,
@@ -50,6 +70,7 @@ export default function About() {
       items: about.technical.skills.map((skill) => skill.title),
     },
   ];
+
   return (
     <Column maxWidth="m">
       <Schema
@@ -77,7 +98,7 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
-      <Row fillWidth s={{ direction: "column"}} horizontal="center">
+      <Row fillWidth s={{ direction: "column" }} horizontal="center">
         {about.avatar.display && (
           <Column
             className={styles.avatar}
@@ -133,7 +154,7 @@ export default function About() {
                 }}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Row paddingX="8">{t("about.scheduleCall")}</Row>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -150,7 +171,7 @@ export default function About() {
               variant="display-default-xs"
               onBackground="neutral-weak"
             >
-              {person.role}
+              {translatedPerson.role}
             </Text>
             {social.length > 0 && (
               <Row
@@ -164,10 +185,9 @@ export default function About() {
                 data-border="rounded"
               >
                 {social
-                      .filter((item) => item.essential)
-                      .map(
-                  (item) =>
-                    item.link && (
+                  .filter((item) => item.essential)
+                  .map((item) =>
+                    item.link ? (
                       <React.Fragment key={item.name}>
                         <Row s={{ hide: true }}>
                           <Button
@@ -190,8 +210,8 @@ export default function About() {
                           />
                         </Row>
                       </React.Fragment>
-                    ),
-                )}
+                    ) : null,
+                  )}
               </Row>
             )}
           </Column>
@@ -271,7 +291,12 @@ export default function About() {
 
           {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
+              <Heading
+                as="h2"
+                id={about.studies.title}
+                variant="display-strong-s"
+                marginBottom="m"
+              >
                 {about.studies.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
@@ -308,7 +333,7 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
+                  <Column key={`${skill.title}-${index}`} fillWidth gap="4">
                     <Text id={skill.title} variant="heading-strong-l">
                       {skill.title}
                     </Text>

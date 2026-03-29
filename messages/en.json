@@ -1,0 +1,120 @@
+{
+  "locale": "en",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Projects",
+    "blog": "Blog",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "person": {
+    "role": "Computer Engineering Student"
+  },
+  "home": {
+    "label": "Home",
+    "title": "Gökay Dervişoğlu | Portfolio",
+    "description": "Portfolio website showcasing my work as a Computer Engineering Student",
+    "headline": "Hello! I'm Gökay Dervişoğlu",
+    "sublinePre": "I'm a ",
+    "sublineStrong": "Computer Engineering student",
+    "sublinePost": " focused on mobile and web development, with experience building scalable, user-oriented applications and a background in computer vision and deep learning.",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "label": "About",
+    "title": "About – Gökay Dervişoğlu",
+    "description": "Meet Gökay Dervişoğlu, Computer Engineering Student from Trabzon, Turkey",
+    "intro": {
+      "title": "Introduction",
+      "description": "Computer Engineering student currently focused on mobile and web development. Experienced in building user-oriented, scalable applications, with a technical background in computer vision and deep learning that supports a strong, end-to-end engineering approach."
+    },
+    "work": {
+      "title": "Work Experience",
+      "experiences": {
+        "turkcell": {
+          "company": "Turkcell",
+          "timeframe": "February 2026 – May 2026 (Ongoing)",
+          "role": "Software Test Intern",
+          "location": "Istanbul, Turkey",
+          "achievement1": "Web Service (API) and UI test scenarios are designed and executed.",
+          "achievement2": "System behavior is analyzed during testing processes to detect defects and support validation activities."
+        },
+        "kafein": {
+          "company": "Kafein Bilişim A.Ş.",
+          "timeframe": "June – August 2025",
+          "role": "Information Security & Management Intern",
+          "location": "Istanbul, Turkey",
+          "achievement1": "Worked on cybersecurity processes and information management.",
+          "achievement2": "Conducted log analysis and examined basic security procedures."
+        }
+      }
+    },
+    "studies": {
+      "title": "Education",
+      "institution": "Recep Tayyip Erdoğan University",
+      "degree": "Bachelor's Degree, Computer Engineering",
+      "timeframe": "2021 - 2026"
+    },
+    "technical": {
+      "title": "Technical Skills",
+      "mainSkills": "Main Skills",
+      "mainSkillsDesc": "Core programming languages and frameworks I use for development.",
+      "toolsTitle": "Tools & Technologies",
+      "toolsDesc": "Development tools and platforms I work with regularly."
+    },
+    "scheduleCall": "Schedule a call"
+  },
+  "work": {
+    "label": "Projects",
+    "title": "Projects – Gökay Dervişoğlu",
+    "description": "AI, embedded systems and software projects by Gökay Dervişoğlu",
+    "backToProjects": "← Back to Projects",
+    "relatedProjects": "Related projects"
+  },
+  "blog": {
+    "label": "Blog",
+    "title": "Writing about tech...",
+    "description": "Read what Gökay Dervişoğlu has been up to recently"
+  },
+  "gallery": {
+    "label": "Gallery",
+    "title": "Photo gallery – Gökay Dervişoğlu",
+    "description": "A photo collection by Gökay Dervişoğlu"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Contact – Gökay Dervişoğlu",
+    "description": "Get in touch with Gökay Dervişoğlu",
+    "heading": "Get In Touch",
+    "subtitle": "Have a question or want to work together? Feel free to reach out!",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Trabzon, Turkey",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Connect with me",
+    "github": "GitHub",
+    "githubDesc": "Check out my projects",
+    "sendMessage": "Send Message",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message here...",
+    "sendButton": "Send Message",
+    "errorName": "Please enter your name",
+    "errorEmail": "Please enter a valid email address",
+    "errorMessage": "Please enter your message",
+    "successRedirect": "Redirecting to email client..."
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Page Not Found",
+    "description": "The page you are looking for does not exist."
+  },
+  "common": {
+    "allRightsReserved": "All Rights Reserved"
+  }
+}

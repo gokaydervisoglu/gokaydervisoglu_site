@@ -1,8 +1,18 @@
 import { Flex, Meta, Schema } from "@once-ui-system/core";
 import GalleryView from "@/components/gallery/GalleryView";
-import { baseURL, gallery, person } from "@/resources";
+import { baseURL, renderContent } from "@/resources";
+import { person } from "@/resources";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  const { gallery } = renderContent(t);
+
   return Meta.generate({
     title: gallery.title,
     description: gallery.description,
@@ -12,7 +22,17 @@ export async function generateMetadata() {
   });
 }
 
-export default function Gallery() {
+export default async function Gallery({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale });
+  const { gallery } = renderContent(t);
+
   return (
     <Flex maxWidth="l">
       <Schema

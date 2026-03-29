@@ -1,0 +1,63 @@
+---
+title: "Otonom Hedefleme Taret Sistemi — Gerçek Zamanlı Nesne Tespiti"
+publishedAt: "2025-06-01"
+summary: "YOLOv8 nesne tespiti ile hedefleri algılayıp takip edebilen gerçek zamanlı bir taret sistemi geliştirildi. Uç üzerinde çıkarım için Jetson Nano entegre edildi; servo tabanlı hedefleme kullanıldı."
+images:
+  - "/images/projects/turret/cover.jpg"
+team:
+  - name: "Gökay Dervişoğlu"
+    role: "Computer Vision Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/gokaydervisoglu/"
+tags:
+  - "Mechanical Systems"
+  - "Software Development"
+  - "Image Processing"
+  - "Python"
+  - "YOLOv8"
+---
+
+## Genel Bakış
+
+Son teknoloji bilgisayarlı görü ile hassas mekanik kontrolü birleştiren otonom bir hava savunma taret sistemi geliştirildi. Sistem, havadaki nesneleri gerçek zamanlı olarak tespit edebilir, takip edebilir ve hedefleyebilir.
+
+## Öne Çıkan Özellikler
+
+- **Gerçek Zamanlı Nesne Tespiti**: Havadaki hedeflerin hızlı ve doğru tespiti için YOLOv8 kullanıldı.
+- **Uç Üzerinde AI İşleme**: Dış bağlantı olmadan otonom çalışmayı sağlamak için edge computing için Jetson Nano kullanıldı.
+- **Hassas Takip**: Yumuşak takip algoritmalarıyla servo tabanlı hedefleme sistemi geliştirildi.
+- **Düşük Gecikme**: Tespit–eylem arasındaki gecikmeyi en aza indirmek için tüm boru hattı optimize edildi.
+
+## Sistem Mimarisi
+
+Sistem üç ana bileşenden oluşur:
+
+1. **Görü Modülü**: Kamera girişi, Jetson Nano üzerinde çalışan YOLOv8 ile işlenir
+2. **Takip Algoritması**: Yumuşak hedef takibi için Kalman filtresi tabanlı tahmin
+3. **Kontrol Sistemi**: Hassas taret hareketi için PID kontrollü servo motorlar
+
+## Kullanılan Teknolojiler
+
+- **YOLOv8**: Son teknoloji nesne tespit modeli
+- **Jetson Nano**: NVIDIA edge AI hesaplama platformu
+- **OpenCV**: Görüntü işleme ve kamera arayüzü
+- **Python**: Birincil geliştirme dili
+- **Arduino**: Servo motor kontrol arayüzü
+
+## Performans
+
+- Tespit hızı: Jetson Nano üzerinde 30+ FPS
+- Takip doğruluğu: Alt derece hassasiyet
+- Yanıt süresi: Tespitten harekete < 100 ms
+
+## Zorluklar ve Çözümler
+
+Ana zorluk, gömülü donanımda gerçek zamanlı performans elde etmekti. Şu yöntemlerle çözüldü:
+
+- TensorRT ile model optimizasyonu
+- Verimli bellek yönetimi
+- Görü ve kontrol görevlerinin paralel işlenmesi
+
+## Proje Zaman Çizelgesi
+
+Ekim 2024 - Haziran 2025

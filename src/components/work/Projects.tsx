@@ -5,12 +5,16 @@ import { ProjectCard } from "@/components";
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
+  locale?: string;
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+export function Projects({ range, exclude, locale = "en" }: ProjectsProps) {
+  let allProjects = getPosts(["src", "app", "[locale]", "work", "projects", locale]);
 
-  // Exclude by slug (exact match)
+  if (allProjects.length === 0 && locale !== "en") {
+    allProjects = getPosts(["src", "app", "[locale]", "work", "projects", "en"]);
+  }
+
   if (exclude && exclude.length > 0) {
     allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
   }

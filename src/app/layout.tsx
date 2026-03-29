@@ -8,23 +8,12 @@ import {
   Background,
   Column,
   Flex,
-  Meta,
   opacity,
   RevealFx,
   SpacingToken,
 } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
-
-export async function generateMetadata() {
-  return Meta.generate({
-    title: home.title,
-    description: home.description,
-    baseURL: baseURL,
-    path: home.path,
-    image: home.image,
-  });
-}
+import { Providers } from "@/components";
+import { effects, fonts, style, dataStyle } from "@/resources";
 
 export default async function RootLayout({
   children,
@@ -55,7 +44,6 @@ export default async function RootLayout({
                   const root = document.documentElement;
                   const defaultTheme = 'system';
                   
-                  // Set defaults from config
                   const config = ${JSON.stringify({
                     brand: style.brand,
                     accent: style.accent,
@@ -69,12 +57,10 @@ export default async function RootLayout({
                     "viz-style": dataStyle.variant,
                   })};
                   
-                  // Apply default values
                   Object.entries(config).forEach(([key, value]) => {
                     root.setAttribute('data-' + key, value);
                   });
                   
-                  // Resolve theme
                   const resolveTheme = (themeValue) => {
                     if (!themeValue || themeValue === 'system') {
                       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -82,12 +68,10 @@ export default async function RootLayout({
                     return themeValue;
                   };
                   
-                  // Apply saved theme
                   const savedTheme = localStorage.getItem('data-theme');
                   const resolvedTheme = resolveTheme(savedTheme);
                   root.setAttribute('data-theme', resolvedTheme);
                   
-                  // Apply any saved style overrides
                   const styleKeys = Object.keys(config);
                   styleKeys.forEach(key => {
                     const value = localStorage.getItem('data-' + key);
@@ -156,14 +140,7 @@ export default async function RootLayout({
               }}
             />
           </RevealFx>
-          <Flex fillWidth minHeight="16" s={{ hide: true }} />
-          <Header />
-          <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
-            <Flex horizontal="center" fillWidth minHeight="0">
-              <RouteGuard>{children}</RouteGuard>
-            </Flex>
-          </Flex>
-          <Footer />
+          {children}
         </Column>
       </Providers>
     </Flex>

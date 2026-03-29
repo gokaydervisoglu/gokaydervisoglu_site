@@ -9,10 +9,20 @@ import {
   Schema,
   Meta,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL } from "@/resources";
+import { baseURL, renderContent } from "@/resources";
+import { person } from "@/resources";
 import { Mailchimp } from "@/components";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export async function generateMetadata() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
+  const { home } = renderContent(t);
+
   return Meta.generate({
     title: home.title,
     description: home.description,
@@ -22,12 +32,22 @@ export async function generateMetadata() {
   });
 }
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations({ locale });
+  const { home, about } = renderContent(t);
+
   return (
-    <Column 
-      maxWidth="m" 
-      gap="xl" 
-      horizontal="center" 
+    <Column
+      maxWidth="m"
+      gap="xl"
+      horizontal="center"
       vertical="center"
       style={{ minHeight: "calc(100vh - 120px)" }}
     >
@@ -87,7 +107,7 @@ export default function Home() {
                 size="m"
                 arrowIcon
               >
-                View Projects
+                {t("home.viewProjects")}
               </Button>
               <Button
                 id="contact"
@@ -96,7 +116,7 @@ export default function Home() {
                 variant="secondary"
                 size="m"
               >
-                Get In Touch
+                {t("home.getInTouch")}
               </Button>
             </Row>
           </RevealFx>

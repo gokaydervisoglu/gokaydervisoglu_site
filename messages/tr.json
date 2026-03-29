@@ -1,0 +1,120 @@
+{
+  "locale": "tr",
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "work": "Projeler",
+    "blog": "Blog",
+    "gallery": "Galeri",
+    "contact": "İletişim"
+  },
+  "person": {
+    "role": "Bilgisayar Mühendisliği Öğrencisi"
+  },
+  "home": {
+    "label": "Ana Sayfa",
+    "title": "Gökay Dervişoğlu | Portfolyo",
+    "description": "Bilgisayar Mühendisliği öğrencisi olarak çalışmalarımı sergileyen portfolyo web sitesi",
+    "headline": "Merhaba! Ben Gökay Dervişoğlu",
+    "sublinePre": "Mobil ve web geliştirmeye odaklanan, ölçeklenebilir ve kullanıcı odaklı uygulamalar geliştirme deneyimine sahip, bilgisayarlı görü ve derin öğrenme alanlarında teknik geçmişi olan bir ",
+    "sublineStrong": "Bilgisayar Mühendisliği öğrencisiyim",
+    "sublinePost": ".",
+    "viewProjects": "Projeleri Gör",
+    "getInTouch": "İletişime Geç"
+  },
+  "about": {
+    "label": "Hakkımda",
+    "title": "Hakkımda – Gökay Dervişoğlu",
+    "description": "Trabzon, Türkiye'den Bilgisayar Mühendisliği öğrencisi Gökay Dervişoğlu ile tanışın",
+    "intro": {
+      "title": "Tanıtım",
+      "description": "Şu anda mobil ve web geliştirmeye odaklanan Bilgisayar Mühendisliği öğrencisi. Kullanıcı odaklı, ölçeklenebilir uygulamalar geliştirme deneyimine sahip olup, bilgisayarlı görü ve derin öğrenme alanlarındaki teknik altyapısı güçlü ve uçtan uca mühendislik yaklaşımını desteklemektedir."
+    },
+    "work": {
+      "title": "İş Deneyimi",
+      "experiences": {
+        "turkcell": {
+          "company": "Turkcell",
+          "timeframe": "Şubat 2026 – Mayıs 2026 (Devam Ediyor)",
+          "role": "Yazılım Test Stajyeri",
+          "location": "İstanbul, Türkiye",
+          "achievement1": "Web Servis (API) ve UI test senaryoları tasarlanmakta ve yürütülmektedir.",
+          "achievement2": "Test süreçlerinde sistem davranışı analiz edilerek hata tespiti ve doğrulama faaliyetleri desteklenmektedir."
+        },
+        "kafein": {
+          "company": "Kafein Bilişim A.Ş.",
+          "timeframe": "Haziran – Ağustos 2025",
+          "role": "Bilgi Güvenliği ve Yönetimi Stajyeri",
+          "location": "İstanbul, Türkiye",
+          "achievement1": "Siber güvenlik süreçleri ve bilgi yönetimi üzerine çalışıldı.",
+          "achievement2": "Log analizi yapıldı ve temel güvenlik prosedürleri incelendi."
+        }
+      }
+    },
+    "studies": {
+      "title": "Eğitim",
+      "institution": "Recep Tayyip Erdoğan Üniversitesi",
+      "degree": "Lisans, Bilgisayar Mühendisliği",
+      "timeframe": "2021 - 2026"
+    },
+    "technical": {
+      "title": "Teknik Beceriler",
+      "mainSkills": "Temel Beceriler",
+      "mainSkillsDesc": "Geliştirme için kullandığım temel programlama dilleri ve framework'ler.",
+      "toolsTitle": "Araçlar ve Teknolojiler",
+      "toolsDesc": "Düzenli olarak çalıştığım geliştirme araçları ve platformlar."
+    },
+    "scheduleCall": "Görüşme planla"
+  },
+  "work": {
+    "label": "Projeler",
+    "title": "Projeler – Gökay Dervişoğlu",
+    "description": "Gökay Dervişoğlu'nun yapay zeka, gömülü sistemler ve yazılım projeleri",
+    "backToProjects": "← Projelere Dön",
+    "relatedProjects": "İlgili projeler"
+  },
+  "blog": {
+    "label": "Blog",
+    "title": "Teknoloji hakkında yazılar...",
+    "description": "Gökay Dervişoğlu'nun son dönemdeki çalışmaları"
+  },
+  "gallery": {
+    "label": "Galeri",
+    "title": "Fotoğraf galerisi – Gökay Dervişoğlu",
+    "description": "Gökay Dervişoğlu'nun fotoğraf koleksiyonu"
+  },
+  "contact": {
+    "label": "İletişim",
+    "title": "İletişim – Gökay Dervişoğlu",
+    "description": "Gökay Dervişoğlu ile iletişime geçin",
+    "heading": "İletişime Geçin",
+    "subtitle": "Bir sorunuz mu var ya da birlikte çalışmak mı istiyorsunuz? Bana ulaşmaktan çekinmeyin!",
+    "email": "E-posta",
+    "location": "Konum",
+    "locationValue": "Trabzon, Türkiye",
+    "linkedin": "LinkedIn",
+    "linkedinDesc": "Benimle bağlantı kurun",
+    "github": "GitHub",
+    "githubDesc": "Projelerimi inceleyin",
+    "sendMessage": "Mesaj Gönder",
+    "nameLabel": "İsim",
+    "namePlaceholder": "Adınız",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "email@ornek.com",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Mesajınızı buraya yazın...",
+    "sendButton": "Mesaj Gönder",
+    "errorName": "Lütfen adınızı girin",
+    "errorEmail": "Lütfen geçerli bir e-posta adresi girin",
+    "errorMessage": "Lütfen mesajınızı girin",
+    "successRedirect": "E-posta istemcisine yönlendiriliyor..."
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "Sayfa Bulunamadı",
+    "description": "Aradığınız sayfa mevcut değil."
+  },
+  "common": {
+    "allRightsReserved": "Tüm Hakları Saklıdır"
+  }
+}
