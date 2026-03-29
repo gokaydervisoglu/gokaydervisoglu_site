@@ -21,7 +21,7 @@ const i18nOptions = {
 };
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL: string = "https://gokaydervisoglu.github.io";
+const baseURL: string = "https://gokaydervisoglu.com";
 
 const routes: RoutesConfig = {
   "/": true,
