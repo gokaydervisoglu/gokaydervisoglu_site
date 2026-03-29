@@ -16,9 +16,9 @@
     "title": "Gökay Dervişoğlu | Portfolyo",
     "description": "Bilgisayar Mühendisliği öğrencisi olarak çalışmalarımı sergileyen portfolyo web sitesi",
     "headline": "Merhaba! Ben Gökay Dervişoğlu",
-    "sublinePre": "Mobil ve web geliştirmeye odaklanan, ölçeklenebilir ve kullanıcı odaklı uygulamalar geliştirme deneyimine sahip, bilgisayarlı görü ve derin öğrenme alanlarında teknik geçmişi olan bir ",
+    "sublinePre": "Yazılım geliştirme ve sistem tasarımına odaklanan bir ",
     "sublineStrong": "Bilgisayar Mühendisliği öğrencisiyim",
-    "sublinePost": ".",
+    "sublinePost": ". Backend sistemler, web servisleri (API) ve kullanıcı odaklı uygulamalar geliştiriyorum. Veri işleme ve yapay zeka projeleriyle teknik altyapımı destekliyorum.",
     "viewProjects": "Projeleri Gör",
     "getInTouch": "İletişime Geç"
   },
@@ -28,7 +28,7 @@
     "description": "Trabzon, Türkiye'den Bilgisayar Mühendisliği öğrencisi Gökay Dervişoğlu ile tanışın",
     "intro": {
       "title": "Tanıtım",
-      "description": "Şu anda mobil ve web geliştirmeye odaklanan Bilgisayar Mühendisliği öğrencisi. Kullanıcı odaklı, ölçeklenebilir uygulamalar geliştirme deneyimine sahip olup, bilgisayarlı görü ve derin öğrenme alanlarındaki teknik altyapısı güçlü ve uçtan uca mühendislik yaklaşımını desteklemektedir."
+      "description": "Yazılım geliştirme ve sistem tasarımına odaklanan bir Bilgisayar Mühendisliği öğrencisi. Backend sistemler, web servisleri (API) ve kullanıcı odaklı uygulamalar geliştiriyorum. Veri işleme ve yapay zeka projeleriyle teknik altyapımı destekliyorum."
     },
     "work": {
       "title": "İş Deneyimi",
