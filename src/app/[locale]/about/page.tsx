@@ -235,7 +235,13 @@ export default async function About({
                     fillWidth
                     className={styles.card}
                   >
-                    <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
+                    <Row
+                      fillWidth
+                      horizontal="between"
+                      vertical="end"
+                      marginBottom="4"
+                      s={{ direction: "column", vertical: "start", gap: "4" }}
+                    >
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
                       </Text>
