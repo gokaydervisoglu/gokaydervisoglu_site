@@ -43,6 +43,26 @@
     .mobileLangButton {
         display: flex !important;
         top: auto !important;
-        bottom: calc(var(--static-space-24) + 64px) !important;
+        bottom: calc(var(--static-space-24) + 76px) !important;
+        min-width: 52px !important;
+        min-height: 52px !important;
+        padding: 12px 10px !important;
+        font-size: 0.9rem !important;
+        letter-spacing: 0.03em !important;
+    }
+
+    .navBar {
+        padding: 6px !important;
+
+        button {
+            min-width: 44px !important;
+            min-height: 44px !important;
+            padding: 0 8px !important;
+
+            svg {
+                width: 20px !important;
+                height: 20px !important;
+            }
+        }
     }
 }
