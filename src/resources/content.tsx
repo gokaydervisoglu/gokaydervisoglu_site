@@ -101,7 +101,7 @@ const about: About = {
     experiences: [
       {
         company: "Turkcell",
-        timeframe: "February 2026 – Present",
+        timeframe: "February 2026 – May 2026",
         role: "Software Test Intern",
         location: "Istanbul, Turkey",
         achievements: [
