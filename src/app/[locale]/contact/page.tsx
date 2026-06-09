@@ -55,7 +55,7 @@ export default function Contact() {
       return;
     }
 
-    const mailtoLink = `mailto:${person.email}?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\n---\nSent from gokaydervisoglu.github.io")}`;
+    const mailtoLink = `mailto:${person.email}?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\n---\nSent from gokaydervisoglu.com")}`;
 
     showToast(t("successRedirect"), "success");
 
