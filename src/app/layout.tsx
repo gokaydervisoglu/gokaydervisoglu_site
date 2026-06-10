@@ -15,17 +15,20 @@ import {
 import { Providers } from "@/components";
 import { effects, fonts, style, dataStyle } from "@/resources";
 import { Analytics } from "@vercel/analytics/next";
+import { getLocale } from "next-intl/server";
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
     <Flex
       suppressHydrationWarning
       as="html"
-      lang="en"
+      lang={locale}
       fillWidth
       className={classNames(
         fonts.heading.variable,

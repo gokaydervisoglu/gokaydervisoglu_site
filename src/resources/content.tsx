@@ -65,7 +65,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm a <Text as="span" size="xl" weight="strong">Computer Engineering student</Text> focused on mobile and web development, with experience building scalable, user-oriented applications and a background in computer vision and deep learning.
+      I'm a <Text as="span" size="xl" weight="strong">Computer Engineering student</Text> focused on software development and system design. I build backend systems, web services (APIs), and user-oriented applications, supporting my technical foundation with data processing and AI projects.
     </>
   ),
 };
@@ -91,7 +91,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Computer Engineering student currently focused on mobile and web development. Experienced in building user-oriented, scalable applications, with a technical background in computer vision and deep learning that supports a strong, end-to-end engineering approach.
+        Computer Engineering student focused on software development and system design. I build backend systems, web services (APIs), and user-oriented applications, supporting my technical foundation with data processing and AI projects.
       </>
     ),
   },
@@ -101,7 +101,7 @@ const about: About = {
     experiences: [
       {
         company: "Turkcell",
-        timeframe: "February 2026 – Present",
+        timeframe: "February 2026 – May 2026",
         role: "Software Test Intern",
         location: "Istanbul, Turkey",
         achievements: [
