@@ -1,5 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as cookie from "cookie";
+import { timingSafeEqual } from "crypto";
+
+// Constant-time string comparison to avoid leaking the password via timing.
+function safeEqual(a: string, b: string): boolean {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  if (bufA.length !== bufB.length) {
+    return false;
+  }
+  return timingSafeEqual(bufA, bufB);
+}
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -11,7 +22,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "Internal server error" }, { status: 500 });
   }
 
-  if (password === correctPassword) {
+  if (typeof password === "string" && safeEqual(password, correctPassword)) {
     const response = NextResponse.json({ success: true }, { status: 200 });
 
     response.headers.set(
