@@ -228,76 +228,81 @@ export default async function About({
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="l">
-                {about.work.experiences.map((experience, index) => (
-                  <Column
-                    key={`${experience.company}-${experience.role}-${index}`}
-                    fillWidth
-                    className={styles.card}
-                  >
-                    <Row
-                      fillWidth
-                      horizontal="between"
-                      vertical="end"
-                      marginBottom="4"
-                      wrap
-                      gap="8"
+              <div className={styles.timeline}>
+                {about.work.experiences.map((experience, index) => {
+                  const dates = experience.timeframe
+                    .split("·")
+                    .map((d) => d.trim())
+                    .filter(Boolean);
+                  return (
+                    <div
+                      key={`${experience.company}-${experience.role}-${index}`}
+                      className={styles.timelineItem}
                     >
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Row>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="4">
-                      {experience.role}
-                    </Text>
-                    {experience.location && (
-                      <Row gap="4" vertical="center" marginBottom="m">
-                        <Icon size="xs" onBackground="neutral-weak" name="globe" />
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {experience.location}
-                        </Text>
-                      </Row>
-                    )}
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map(
-                        (achievement: React.ReactNode, index: number) => (
-                          <Text
-                            as="li"
-                            variant="body-default-m"
-                            key={`${experience.company}-${index}`}
-                          >
-                            {achievement}
-                          </Text>
-                        ),
-                      )}
-                    </Column>
-                    {experience.images && experience.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, imgIdx) => (
-                          <Row
-                            key={imgIdx}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
+                      <div className={styles.timelineRail}>
+                        {dates.map((date, dateIndex) => (
+                          <div key={dateIndex} className={styles.railEntry}>
+                            <span className={styles.timelineDot} aria-hidden="true" />
+                            <Text variant="body-strong-xs" onBackground="brand-weak">
+                              {date}
+                            </Text>
+                          </div>
                         ))}
-                      </Row>
-                    )}
-                  </Column>
-                ))}
-              </Column>
+                      </div>
+                      <Column fillWidth className={styles.card}>
+                        <Text id={experience.company} variant="heading-strong-l" marginBottom="4">
+                          {experience.company}
+                        </Text>
+                        <Text variant="body-default-s" onBackground="brand-weak" marginBottom="4">
+                          {experience.role}
+                        </Text>
+                        {experience.location && (
+                          <Row gap="4" vertical="center" marginBottom="m">
+                            <Icon size="xs" onBackground="neutral-weak" name="globe" />
+                            <Text variant="body-default-xs" onBackground="neutral-weak">
+                              {experience.location}
+                            </Text>
+                          </Row>
+                        )}
+                        <Column as="ul" gap="16">
+                          {experience.achievements.map(
+                            (achievement: React.ReactNode, achIndex: number) => (
+                              <Text
+                                as="li"
+                                variant="body-default-m"
+                                key={`${experience.company}-${achIndex}`}
+                              >
+                                {achievement}
+                              </Text>
+                            ),
+                          )}
+                        </Column>
+                        {experience.images && experience.images.length > 0 && (
+                          <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
+                            {experience.images.map((image, imgIdx) => (
+                              <Row
+                                key={imgIdx}
+                                border="neutral-medium"
+                                radius="m"
+                                minWidth={image.width}
+                                height={image.height}
+                              >
+                                <Media
+                                  enlarge
+                                  radius="m"
+                                  sizes={image.width.toString()}
+                                  alt={image.alt}
+                                  src={image.src}
+                                />
+                              </Row>
+                            ))}
+                          </Row>
+                        )}
+                      </Column>
+                    </div>
+                  );
+                })}
+              </div>
             </>
           )}
 
