@@ -35,19 +35,19 @@
       "experiences": {
         "turkcell": {
           "company": "Turkcell",
-          "timeframe": "February 2026 – May 2026",
+          "timeframe": "February – May 2026 · July 2026 – Present",
           "role": "Software Test Intern",
           "location": "Istanbul, Turkey",
-          "achievement1": "Web Service (API) and UI test scenarios are designed and executed.",
-          "achievement2": "System behavior is analyzed during testing processes to detect defects and support validation activities."
+          "achievement1": "Designed and executed Web Service (API) and UI test scenarios.",
+          "achievement2": "Reviewed the test automation framework and contributed to system analysis and defect verification processes."
         },
         "kafein": {
           "company": "Kafein Bilişim A.Ş.",
           "timeframe": "June – August 2025",
           "role": "Information Security & Management Intern",
           "location": "Istanbul, Turkey",
-          "achievement1": "Worked on cybersecurity processes and information management.",
-          "achievement2": "Conducted log analysis and examined basic security procedures."
+          "achievement1": "Worked on information security and information management processes.",
+          "achievement2": "Reviewed log analysis and fundamental security procedures."
         }
       }
     },

@@ -35,19 +35,19 @@
       "experiences": {
         "turkcell": {
           "company": "Turkcell",
-          "timeframe": "Şubat 2026 – Mayıs 2026",
+          "timeframe": "Şubat – Mayıs 2026 · Temmuz 2026 – Devam ediyor",
           "role": "Yazılım Test Stajyeri",
           "location": "İstanbul, Türkiye",
-          "achievement1": "Web Servis (API) ve UI test senaryoları tasarlanmakta ve yürütülmektedir.",
-          "achievement2": "Test süreçlerinde sistem davranışı analiz edilerek hata tespiti ve doğrulama faaliyetleri desteklenmektedir."
+          "achievement1": "Web Servis (API) ve UI test senaryoları tasarlandı ve yürütüldü.",
+          "achievement2": "Test otomasyon çerçevesi incelendi; sistem analizi ve hata doğrulama süreçlerine katkıda bulunuldu."
         },
         "kafein": {
           "company": "Kafein Bilişim A.Ş.",
           "timeframe": "Haziran – Ağustos 2025",
           "role": "Bilgi Güvenliği ve Yönetimi Stajyeri",
           "location": "İstanbul, Türkiye",
-          "achievement1": "Siber güvenlik süreçleri ve bilgi yönetimi üzerine çalışıldı.",
-          "achievement2": "Log analizi yapıldı ve temel güvenlik prosedürleri incelendi."
+          "achievement1": "Bilgi güvenliği ve bilgi yönetimi süreçleri üzerinde çalışıldı.",
+          "achievement2": "Log analizi ve temel güvenlik prosedürleri incelendi."
         }
       }
     },

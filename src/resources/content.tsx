@@ -101,15 +101,15 @@ const about: About = {
     experiences: [
       {
         company: "Turkcell",
-        timeframe: "February 2026 – May 2026",
+        timeframe: "February – May 2026 · July 2026 – Present",
         role: "Software Test Intern",
         location: "Istanbul, Turkey",
         achievements: [
           <>
-            Web Service (API) and UI test scenarios are designed and executed.
+            Designed and executed Web Service (API) and UI test scenarios.
           </>,
           <>
-            System behavior is analyzed during testing processes to detect defects and support validation activities.
+            Reviewed the test automation framework and contributed to system analysis and defect verification processes.
           </>,
         ],
         images: [],
@@ -121,10 +121,10 @@ const about: About = {
         location: "Istanbul, Turkey",
         achievements: [
           <>
-            Worked on cybersecurity processes and information management.
+            Worked on information security and information management processes.
           </>,
           <>
-            Conducted log analysis and examined basic security procedures.
+            Reviewed log analysis and fundamental security procedures.
           </>,
         ],
         images: [],
