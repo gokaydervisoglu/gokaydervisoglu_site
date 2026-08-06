@@ -1,38 +1,39 @@
 # Gökay Dervişoğlu - Portfolio
 
-Personal portfolio website showcasing my projects, experience, and achievements in aerospace engineering and software development.
+Personal portfolio website showcasing my projects, experience, and achievements in software development, AI, and embedded systems.
 
 ## About
 
 This portfolio highlights my work in:
 
-- Autonomous systems and UAV development
+- Backend systems and web services (APIs)
 - Computer vision and AI applications
-- Aerospace engineering projects
+- Autonomous systems and UAV development
 - Technical competitions and achievements
 
 ## Tech Stack
 
-- **Framework:** Next.js 16
+- **Framework:** Next.js 16 (App Router, Turbopack)
 - **UI Library:** Once UI
 - **Styling:** SASS/SCSS
 - **Content:** MDX
+- **i18n:** next-intl (Turkish / English)
 - **Deployment:** Vercel
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js v18.17 or higher
-- npm or yarn
+- Node.js
+- npm
 
 ### Installation
 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/gokaydervisoglu/portfolio.git
-cd portfolio
+git clone https://github.com/gokaydervisoglu/gokaydervisoglu_site.git
+cd gokaydervisoglu_site
 ```
 
 2. Install dependencies
@@ -52,18 +53,24 @@ npm run dev
 ## Project Structure
 
 ```
+├── messages/                  # i18n translation strings (en.json, tr.json)
+├── public/                    # Static assets
+│   └── images/                # Images and media
 ├── src/
-│   ├── app/              # Next.js app directory
-│   │   ├── about/        # About/CV page
-│   │   ├── blog/         # Blog posts
-│   │   ├── contact/      # Contact page
-│   │   ├── gallery/      # Photo gallery
-│   │   └── work/         # Projects showcase
-│   ├── components/       # React components
-│   ├── resources/        # Configuration and content
-│   └── utils/            # Utility functions
-├── public/               # Static assets
-│   └── images/           # Images and media
+│   ├── app/
+│   │   └── [locale]/          # Locale-scoped routes
+│   │       ├── about/         # About / experience page
+│   │       ├── blog/          # Blog posts
+│   │       ├── contact/       # Contact page
+│   │       ├── gallery/       # Photo gallery
+│   │       └── work/          # Projects showcase
+│   │           └── projects/  # MDX project pages (en/, tr/)
+│   ├── components/            # React components
+│   ├── i18n/                  # Internationalization config
+│   ├── resources/             # Configuration and content
+│   ├── types/                 # TypeScript types
+│   ├── utils/                 # Utility functions
+│   └── proxy.ts               # Request middleware/proxy
 └── package.json
 ```
 
@@ -71,7 +78,7 @@ npm run dev
 
 - 🎨 Modern, responsive design
 - 📱 Mobile-friendly interface
-- 🌙 Dark/Light theme support
+- 🌍 Bilingual support (Turkish / English)
 - 📝 MDX-based blog and project pages
 - 🖼️ Photo gallery
 - 📧 Contact form
