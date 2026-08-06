@@ -26,6 +26,75 @@
     }
 }
 
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--static-space-24);
+    margin-bottom: var(--static-space-24);
+    width: 100%;
+}
+
+.timelineItem {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.3fr) 1fr;
+    gap: var(--static-space-24);
+    width: 100%;
+}
+
+.timelineRail {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--static-space-20);
+    padding-top: 2px;
+    padding-left: 20px;
+}
+
+/* Continuous track: connects all dots within an item and bridges the
+   gap to the next item. Clamped at the last dot of the final item. */
+.timelineRail::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: -28px;
+    width: 2px;
+    background: linear-gradient(
+        180deg,
+        var(--brand-alpha-medium),
+        var(--neutral-alpha-weak)
+    );
+}
+
+.timelineItem:last-child .timelineRail::before {
+    bottom: auto;
+    height: 12px;
+}
+
+.railEntry {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--static-space-8);
+}
+
+.timelineDot {
+    position: absolute;
+    left: -20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--brand-background-strong);
+    box-shadow: 0 0 0 4px var(--brand-alpha-weak);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.3s ease;
+}
+
+.timelineItem:hover .timelineDot {
+    transform: scale(1.25);
+    box-shadow: 0 0 0 6px var(--brand-alpha-medium);
+}
+
 .sectionDivider {
     border: none;
     height: 1px;
@@ -76,5 +145,14 @@
 
     .card {
         padding: var(--static-space-16);
+    }
+
+    .timelineItem {
+        grid-template-columns: minmax(96px, 110px) 1fr;
+        gap: var(--static-space-16);
+    }
+
+    .timelineRail {
+        font-size: 0.85em;
     }
 }
