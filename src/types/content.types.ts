@@ -185,6 +185,26 @@ export interface About extends BasePageConfig {
       timeframe?: string;
     }>;
   };
+  /** Achievements section */
+  achievements?: {
+    /** Whether to display achievements section */
+    display: boolean;
+    /** Title for the achievements section */
+    title: string;
+    /** List of achievements */
+    items: Array<{
+      /** Achievement title */
+      title: string;
+      /** Achievement description */
+      description?: string;
+      /** Year of the achievement */
+      year?: string;
+      /** Optional link to a related page */
+      link?: string;
+      /** Whether the link is external */
+      external?: boolean;
+    }>;
+  };
   /** Technical skills section */
   technical: {
     /** Whether to display technical skills section */

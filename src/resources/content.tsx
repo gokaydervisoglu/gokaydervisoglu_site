@@ -10,7 +10,7 @@ const person: Person = {
   email: "gokaydervisoglu@gmail.com",
   location: "Europe/Istanbul", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   displayLocation: "Trabzon, Turkey", // Display name for location
-  languages: ["Turkish", "English"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["Turkish (Native)", "English (B1)"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
@@ -65,7 +65,13 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm a <Text as="span" size="xl" weight="strong">Computer Engineering student</Text> focused on software development and system design. I build backend systems, web services (APIs), and user-oriented applications, supporting my technical foundation with data processing and AI projects.
+      I'm a{" "}
+      <Text as="span" size="xl" weight="strong">
+        Computer Engineering student
+      </Text>{" "}
+      focused on software development and system design. I develop web services (APIs), backend
+      systems, and user-oriented applications. With a technical background supported by artificial
+      intelligence and computer vision projects, I build end-to-end software systems.
     </>
   ),
 };
@@ -91,7 +97,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Computer Engineering student focused on software development and system design. I build backend systems, web services (APIs), and user-oriented applications, supporting my technical foundation with data processing and AI projects.
+        Computer Engineering student focused on software development and system design. Experienced
+        in developing web services (APIs), backend systems, and user-oriented applications. With a
+        technical background supported by artificial intelligence and computer vision projects,
+        capable of building end-to-end software systems.
       </>
     ),
   },
@@ -101,31 +110,26 @@ const about: About = {
     experiences: [
       {
         company: "Turkcell",
-        timeframe: "February – May 2026 · July 2026 – Present",
-        role: "Software Test Intern",
+        timeframe: "February – May 2026 · July – August 2026",
+        role: "Software Test Intern · Data & TV Solutions",
         location: "Istanbul, Turkey",
         achievements: [
+          <>Designed and executed Web Service (API) and UI test scenarios.</>,
           <>
-            Designed and executed Web Service (API) and UI test scenarios.
-          </>,
-          <>
-            Reviewed the test automation framework and contributed to system analysis and defect verification processes.
+            Reviewed the test automation framework and contributed to system analysis and defect
+            verification processes.
           </>,
         ],
         images: [],
       },
       {
-        company: "Kafein Bilişim A.Ş.",
+        company: "Kafein Information Technologies Inc.",
         timeframe: "June – August 2025",
-        role: "Information Security & Management Intern",
+        role: "Cyber Security Intern",
         location: "Istanbul, Turkey",
         achievements: [
-          <>
-            Worked on information security and information management processes.
-          </>,
-          <>
-            Reviewed log analysis and fundamental security procedures.
-          </>,
+          <>Worked on cyber security and data management processes.</>,
+          <>Performed log analysis and reviewed fundamental security procedures.</>,
         ],
         images: [],
       },
@@ -137,8 +141,37 @@ const about: About = {
     institutions: [
       {
         name: "Recep Tayyip Erdoğan University",
-        description: <>Bachelor's Degree, Computer Engineering</>,
-        timeframe: "2021 - 2026",
+        description: <>Bachelor's Degree, Computer Engineering · GPA: 3.05/4.00</>,
+        timeframe: "2021 – 2026 · Rize, Turkey",
+      },
+    ],
+  },
+  achievements: {
+    display: true, // set to false to hide this section
+    title: "Achievements",
+    items: [
+      {
+        title: "TEKNOFEST 5G Positioning",
+        description: "4th Place in Turkey",
+        year: "2025",
+        link: "/work/5g-localization-teknofest",
+      },
+      {
+        title: "TÜBİTAK 2209-A",
+        description: "Research Grant",
+        year: "2025",
+        link: "/work/virtual-clothing-fitting-tubitak",
+      },
+      {
+        title: "SAYZEK Datathon",
+        description: "Top 10 Finalist",
+        year: "2024",
+      },
+      {
+        title: "IDEF Presentation",
+        description: "UAV Fault Detection",
+        year: "2025",
+        link: "/work/idef-2025-uav-health-monitoring",
       },
     ],
   },
@@ -147,55 +180,39 @@ const about: About = {
     title: "Technical Skills",
     skills: [
       {
-        title: "Main Skills",
-        description: (
-          <>Core programming languages and frameworks I use for development.</>
-        ),
+        title: "Programming",
+        description: <>Programming languages I use for software development.</>,
         tags: [
           {
             name: "Python",
             icon: "python",
           },
           {
+            name: "C++",
+            icon: "cpp",
+          },
+          {
             name: "Java",
             icon: "java",
-          },
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "React",
-            icon: "react",
-          },
-          {
-            name: "HTML",
-            icon: "html5",
-          },
-          {
-            name: "CSS",
-            icon: "css3",
           },
           {
             name: "C#",
             icon: "csharp",
           },
           {
-            name: "C",
-            icon: "cpp",
+            name: "SQL",
+            icon: "sql",
           },
         ],
         images: [],
       },
       {
-        title: "Tools & Technologies",
-        description: (
-          <>Development tools and platforms I work with regularly.</>
-        ),
+        title: "Tools",
+        description: <>Development tools and platforms I work with regularly.</>,
         tags: [
           {
-            name: "MySQL",
-            icon: "mysql",
+            name: "Docker",
+            icon: "docker",
           },
           {
             name: "Git",
@@ -206,16 +223,58 @@ const about: About = {
             icon: "github",
           },
           {
-            name: "Docker",
-            icon: "docker",
-          },
-          {
             name: "Linux",
             icon: "linux",
           },
           {
-            name: "Maven",
-            icon: "maven",
+            name: "VS Code",
+            icon: "vscode",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Software Development",
+        description: <>Software development areas I am experienced in.</>,
+        tags: [
+          {
+            name: "API",
+            icon: "serverStack",
+          },
+          {
+            name: "Backend",
+            icon: "server",
+          },
+          {
+            name: "Testing",
+            icon: "testing",
+          },
+          {
+            name: "System Design",
+            icon: "systemDesign",
+          },
+        ],
+        images: [],
+      },
+      {
+        title: "Artificial Intelligence",
+        description: <>AI frameworks and neural network architectures I work with.</>,
+        tags: [
+          {
+            name: "PyTorch",
+            icon: "pytorch",
+          },
+          {
+            name: "TensorFlow",
+            icon: "tensorflow",
+          },
+          {
+            name: "CNN",
+            icon: "chip",
+          },
+          {
+            name: "LSTM",
+            icon: "recurrent",
           },
         ],
         images: [],

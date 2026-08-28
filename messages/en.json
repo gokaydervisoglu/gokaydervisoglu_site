@@ -18,7 +18,7 @@
     "headline": "Hello! I'm Gökay Dervişoğlu",
     "sublinePre": "I'm a ",
     "sublineStrong": "Computer Engineering student",
-    "sublinePost": " focused on software development and system design. I build backend systems, web services (APIs), and user-oriented applications, supporting my technical foundation with data processing and AI projects.",
+    "sublinePost": " focused on software development and system design. I develop web services (APIs), backend systems, and user-oriented applications. With a technical background supported by artificial intelligence and computer vision projects, I build end-to-end software systems.",
     "viewProjects": "View Projects",
     "getInTouch": "Get In Touch"
   },
@@ -28,41 +28,74 @@
     "description": "Meet Gökay Dervişoğlu, Computer Engineering Student from Trabzon, Turkey",
     "intro": {
       "title": "Introduction",
-      "description": "Computer Engineering student focused on software development and system design. I build backend systems, web services (APIs), and user-oriented applications, supporting my technical foundation with data processing and AI projects."
+      "description": "Computer Engineering student focused on software development and system design. Experienced in developing web services (APIs), backend systems, and user-oriented applications. With a technical background supported by artificial intelligence and computer vision projects, capable of building end-to-end software systems."
     },
     "work": {
       "title": "Work Experience",
       "experiences": {
         "turkcell": {
           "company": "Turkcell",
-          "timeframe": "February – May 2026 · July 2026 – Present",
-          "role": "Software Test Intern",
+          "timeframe": "February – May 2026 · July – August 2026",
+          "role": "Software Test Intern · Data & TV Solutions",
           "location": "Istanbul, Turkey",
           "achievement1": "Designed and executed Web Service (API) and UI test scenarios.",
           "achievement2": "Reviewed the test automation framework and contributed to system analysis and defect verification processes."
         },
         "kafein": {
-          "company": "Kafein Bilişim A.Ş.",
+          "company": "Kafein Information Technologies Inc.",
           "timeframe": "June – August 2025",
-          "role": "Information Security & Management Intern",
+          "role": "Cyber Security Intern",
           "location": "Istanbul, Turkey",
-          "achievement1": "Worked on information security and information management processes.",
-          "achievement2": "Reviewed log analysis and fundamental security procedures."
+          "achievement1": "Worked on cyber security and data management processes.",
+          "achievement2": "Performed log analysis and reviewed fundamental security procedures."
         }
       }
     },
     "studies": {
       "title": "Education",
       "institution": "Recep Tayyip Erdoğan University",
-      "degree": "Bachelor's Degree, Computer Engineering",
-      "timeframe": "2021 - 2026"
+      "degree": "Bachelor's Degree, Computer Engineering · GPA: 3.05/4.00",
+      "timeframe": "2021 – 2026 · Rize, Turkey"
+    },
+    "achievements": {
+      "title": "Achievements",
+      "items": {
+        "teknofest": {
+          "title": "TEKNOFEST 5G Positioning",
+          "description": "4th Place in Turkey"
+        },
+        "tubitak": {
+          "title": "TÜBİTAK 2209-A",
+          "description": "Research Grant"
+        },
+        "sayzek": {
+          "title": "SAYZEK Datathon",
+          "description": "Top 10 Finalist"
+        },
+        "idef": {
+          "title": "IDEF Presentation",
+          "description": "UAV Fault Detection"
+        }
+      }
     },
     "technical": {
       "title": "Technical Skills",
-      "mainSkills": "Main Skills",
-      "mainSkillsDesc": "Core programming languages and frameworks I use for development.",
-      "toolsTitle": "Tools & Technologies",
-      "toolsDesc": "Development tools and platforms I work with regularly."
+      "programming": {
+        "title": "Programming",
+        "description": "Programming languages I use for software development."
+      },
+      "tools": {
+        "title": "Tools",
+        "description": "Development tools and platforms I work with regularly."
+      },
+      "softwareDevelopment": {
+        "title": "Software Development",
+        "description": "Software development areas I am experienced in."
+      },
+      "artificialIntelligence": {
+        "title": "Artificial Intelligence",
+        "description": "AI frameworks and neural network architectures I work with."
+      }
     },
     "scheduleCall": "Schedule a call"
   },
