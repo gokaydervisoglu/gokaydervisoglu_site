@@ -14,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, renderContent } from "@/resources";
 import { person, social } from "@/resources";
+import { Link } from "@/i18n/routing";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -64,6 +65,15 @@ export default async function About({
       display: about.studies.display,
       items: about.studies.institutions.map((institution) => institution.name),
     },
+    ...(about.achievements
+      ? [
+          {
+            title: about.achievements.title,
+            display: about.achievements.display,
+            items: about.achievements.items.map((item) => item.title),
+          },
+        ]
+      : []),
     {
       title: about.technical.title,
       display: about.technical.display,
@@ -306,6 +316,61 @@ export default async function About({
             </>
           )}
 
+          {about.achievements?.display && (
+            <>
+              <hr className={styles.sectionDivider} />
+              <Heading
+                as="h2"
+                id={about.achievements.title}
+                variant="display-strong-s"
+                marginBottom="m"
+              >
+                {about.achievements.title}
+              </Heading>
+              <Column fillWidth gap="12" marginBottom="l">
+                {about.achievements.items.map((achievement, index) => {
+                  const content = (
+                    <>
+                      <Icon name="award" onBackground="brand-weak" className={styles.awardIcon} />
+                      <Column fillWidth gap="4">
+                        <Text variant="body-strong-m">{achievement.title}</Text>
+                        {achievement.description && (
+                          <Text variant="body-default-s" onBackground="neutral-weak">
+                            {achievement.description}
+                          </Text>
+                        )}
+                      </Column>
+                      {achievement.year && (
+                        <Tag size="l" className={styles.yearTag}>
+                          {achievement.year}
+                        </Tag>
+                      )}
+                    </>
+                  );
+                  return achievement.link ? (
+                    <Link
+                      key={`${achievement.title}-${index}`}
+                      href={achievement.link}
+                      className={`${styles.card} ${styles.achievementCard}`}
+                    >
+                      {content}
+                    </Link>
+                  ) : (
+                    <Row
+                      key={`${achievement.title}-${index}`}
+                      fillWidth
+                      vertical="center"
+                      gap="16"
+                      className={styles.card}
+                    >
+                      {content}
+                    </Row>
+                  );
+                })}
+              </Column>
+            </>
+          )}
+
           <hr className={styles.sectionDivider} />
 
           <div className={styles.gridRow}>
@@ -321,11 +386,7 @@ export default async function About({
                 </Heading>
                 <Column fillWidth gap="l">
                   {about.studies.institutions.map((institution, index) => (
-                    <Column
-                      key={`${institution.name}-${index}`}
-                      fillWidth
-                      className={styles.card}
-                    >
+                    <Column key={`${institution.name}-${index}`} fillWidth className={styles.card}>
                       <Text id={institution.name} variant="heading-strong-l" marginBottom="4">
                         {institution.name}
                       </Text>
@@ -358,11 +419,7 @@ export default async function About({
                 </Heading>
                 <Column fillWidth gap="l">
                   {about.technical.skills.map((skill, index) => (
-                    <Column
-                      key={`${skill.title}-${index}`}
-                      fillWidth
-                      className={styles.card}
-                    >
+                    <Column key={`${skill.title}-${index}`} fillWidth className={styles.card}>
                       <Text id={skill.title} variant="heading-strong-l" marginBottom="4">
                         {skill.title}
                       </Text>

@@ -23,10 +23,26 @@ function renderContent(t: TranslationFunction) {
     subline: (
       <>
         {t("home.sublinePre")}
-        <Text as="span" size="xl" weight="strong">{t("home.sublineStrong")}</Text>
+        <Text as="span" size="xl" weight="strong">
+          {t("home.sublineStrong")}
+        </Text>
         {t("home.sublinePost")}
       </>
     ),
+  };
+
+  const achievementKeys = ["teknofest", "tubitak", "sayzek", "idef"];
+  const translatedAchievements = about.achievements && {
+    ...about.achievements,
+    title: t("about.achievements.title"),
+    items: about.achievements.items.map((item, index) => {
+      const key = achievementKeys[index] ?? `${index}`;
+      return {
+        ...item,
+        title: t(`about.achievements.items.${key}.title`),
+        description: t(`about.achievements.items.${key}.description`),
+      };
+    }),
   };
 
   const translatedAbout = {
@@ -78,16 +94,19 @@ function renderContent(t: TranslationFunction) {
         },
       ],
     },
+    achievements: translatedAchievements,
     technical: {
       ...about.technical,
       title: t("about.technical.title"),
-      skills: about.technical.skills.map((skill, index) => ({
-        ...skill,
-        title: index === 0 ? t("about.technical.mainSkills") : t("about.technical.toolsTitle"),
-        description: (
-          <>{index === 0 ? t("about.technical.mainSkillsDesc") : t("about.technical.toolsDesc")}</>
-        ),
-      })),
+      skills: about.technical.skills.map((skill, index) => {
+        const groupKeys = ["programming", "tools", "softwareDevelopment", "artificialIntelligence"];
+        const key = groupKeys[index] ?? `skill${index}`;
+        return {
+          ...skill,
+          title: t(`about.technical.${key}.title`),
+          description: <>{t(`about.technical.${key}.description`)}</>,
+        };
+      }),
     },
   };
 

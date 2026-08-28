@@ -115,6 +115,23 @@
     width: 100%;
 }
 
+.achievementCard {
+    display: flex;
+    align-items: center;
+    gap: var(--static-space-16);
+    text-decoration: none;
+    color: inherit;
+}
+
+.awardIcon {
+    flex-shrink: 0;
+}
+
+.yearTag {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
 .gridLeft {
     flex: 4;
     min-width: 0;
@@ -145,6 +162,10 @@
 
     .card {
         padding: var(--static-space-16);
+    }
+
+    .achievementCard {
+        flex-wrap: wrap;
     }
 
     .timelineItem {

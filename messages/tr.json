@@ -18,7 +18,7 @@
     "headline": "Merhaba! Ben Gökay Dervişoğlu",
     "sublinePre": "Yazılım geliştirme ve sistem tasarımına odaklanan bir ",
     "sublineStrong": "Bilgisayar Mühendisliği öğrencisiyim",
-    "sublinePost": ". Backend sistemler, web servisleri (API) ve kullanıcı odaklı uygulamalar geliştiriyorum. Veri işleme ve yapay zeka projeleriyle teknik altyapımı destekliyorum.",
+    "sublinePost": ". Web servisleri (API), backend sistemler ve kullanıcı odaklı uygulamalar geliştiriyorum. Yapay zeka ve bilgisayarlı görü projeleriyle desteklenen teknik altyapımla uçtan uca yazılım sistemleri kuruyorum.",
     "viewProjects": "Projeleri Gör",
     "getInTouch": "İletişime Geç"
   },
@@ -28,15 +28,15 @@
     "description": "Trabzon, Türkiye'den Bilgisayar Mühendisliği öğrencisi Gökay Dervişoğlu ile tanışın",
     "intro": {
       "title": "Tanıtım",
-      "description": "Yazılım geliştirme ve sistem tasarımına odaklanan bir Bilgisayar Mühendisliği öğrencisi. Backend sistemler, web servisleri (API) ve kullanıcı odaklı uygulamalar geliştiriyorum. Veri işleme ve yapay zeka projeleriyle teknik altyapımı destekliyorum."
+      "description": "Yazılım geliştirme ve sistem tasarımına odaklanan bir Bilgisayar Mühendisliği öğrencisi. Web servisleri (API), backend sistemler ve kullanıcı odaklı uygulamalar geliştirme deneyimine sahip. Yapay zeka ve bilgisayarlı görü projeleriyle desteklenen teknik altyapısıyla uçtan uca yazılım sistemleri kurabilme yeteneğine sahip."
     },
     "work": {
       "title": "İş Deneyimi",
       "experiences": {
         "turkcell": {
           "company": "Turkcell",
-          "timeframe": "Şubat – Mayıs 2026 · Temmuz 2026 – Devam ediyor",
-          "role": "Yazılım Test Stajyeri",
+          "timeframe": "Şubat – Mayıs 2026 · Temmuz – Ağustos 2026",
+          "role": "Yazılım Test Stajyeri · Data & TV Solutions",
           "location": "İstanbul, Türkiye",
           "achievement1": "Web Servis (API) ve UI test senaryoları tasarlandı ve yürütüldü.",
           "achievement2": "Test otomasyon çerçevesi incelendi; sistem analizi ve hata doğrulama süreçlerine katkıda bulunuldu."
@@ -44,25 +44,58 @@
         "kafein": {
           "company": "Kafein Bilişim A.Ş.",
           "timeframe": "Haziran – Ağustos 2025",
-          "role": "Bilgi Güvenliği ve Yönetimi Stajyeri",
+          "role": "Siber Güvenlik Stajyeri",
           "location": "İstanbul, Türkiye",
-          "achievement1": "Bilgi güvenliği ve bilgi yönetimi süreçleri üzerinde çalışıldı.",
-          "achievement2": "Log analizi ve temel güvenlik prosedürleri incelendi."
+          "achievement1": "Siber güvenlik ve veri yönetimi süreçleri üzerinde çalışıldı.",
+          "achievement2": "Log analizi yapıldı ve temel güvenlik prosedürleri incelendi."
         }
       }
     },
     "studies": {
       "title": "Eğitim",
       "institution": "Recep Tayyip Erdoğan Üniversitesi",
-      "degree": "Lisans, Bilgisayar Mühendisliği",
-      "timeframe": "2021 - 2026"
+      "degree": "Lisans, Bilgisayar Mühendisliği · GPA: 3.05/4.00",
+      "timeframe": "2021 – 2026 · Rize, Türkiye"
+    },
+    "achievements": {
+      "title": "Başarılar",
+      "items": {
+        "teknofest": {
+          "title": "TEKNOFEST 5G Konumlandırma",
+          "description": "Türkiye 4.'sü"
+        },
+        "tubitak": {
+          "title": "TÜBİTAK 2209-A",
+          "description": "Araştırma Desteği"
+        },
+        "sayzek": {
+          "title": "SAYZEK Datathon",
+          "description": "İlk 10 Finalist"
+        },
+        "idef": {
+          "title": "IDEF Sunumu",
+          "description": "İHA Arıza Tespiti"
+        }
+      }
     },
     "technical": {
       "title": "Teknik Beceriler",
-      "mainSkills": "Temel Beceriler",
-      "mainSkillsDesc": "Geliştirme için kullandığım temel programlama dilleri ve framework'ler.",
-      "toolsTitle": "Araçlar ve Teknolojiler",
-      "toolsDesc": "Düzenli olarak çalıştığım geliştirme araçları ve platformlar."
+      "programming": {
+        "title": "Programlama",
+        "description": "Yazılım geliştirmede kullandığım programlama dilleri."
+      },
+      "tools": {
+        "title": "Araçlar",
+        "description": "Düzenli olarak çalıştığım geliştirme araçları ve platformlar."
+      },
+      "softwareDevelopment": {
+        "title": "Yazılım Geliştirme",
+        "description": "Deneyim sahibi olduğum yazılım geliştirme alanları."
+      },
+      "artificialIntelligence": {
+        "title": "Yapay Zeka",
+        "description": "Çalıştığım yapay zeka çerçeveleri ve sinir ağı mimarileri."
+      }
     },
     "scheduleCall": "Görüşme planla"
   },
