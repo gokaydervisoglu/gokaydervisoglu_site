@@ -1,8 +1,7 @@
 .cardLink {
   text-decoration: none;
-  /* Equal-width cards per row, independent of the responsive gap */
-  flex: 1 1 0;
-  min-width: 300px;
+  display: block;
+  height: 100%;
   animation: cardFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 
   &:nth-child(2) {
@@ -13,11 +12,6 @@
   }
   &:nth-child(4) {
     animation-delay: 0.24s;
-  }
-
-  @media (max-width: 768px) {
-    flex: 1 1 100%;
-    max-width: 100%;
   }
 }
 
