@@ -67,6 +67,7 @@ function renderContent(t: TranslationFunction) {
           achievements: [
             <>{t("about.work.experiences.turkcell.achievement1")}</>,
             <>{t("about.work.experiences.turkcell.achievement2")}</>,
+            <>{t("about.work.experiences.turkcell.achievement3")}</>,
           ],
           images: [] as Array<{ src: string; alt: string; width: number; height: number }>,
         },
@@ -78,6 +79,7 @@ function renderContent(t: TranslationFunction) {
           achievements: [
             <>{t("about.work.experiences.kafein.achievement1")}</>,
             <>{t("about.work.experiences.kafein.achievement2")}</>,
+            <>{t("about.work.experiences.kafein.achievement3")}</>,
           ],
           images: [] as Array<{ src: string; alt: string; width: number; height: number }>,
         },
@@ -99,7 +101,7 @@ function renderContent(t: TranslationFunction) {
       ...about.technical,
       title: t("about.technical.title"),
       skills: about.technical.skills.map((skill, index) => {
-        const groupKeys = ["programming", "tools", "softwareDevelopment", "artificialIntelligence"];
+        const groupKeys = ["programming", "tools", "testAutomation", "artificialIntelligence"];
         const key = groupKeys[index] ?? `skill${index}`;
         return {
           ...skill,

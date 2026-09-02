@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Gökay",
   lastName: "Dervişoğlu",
   name: "Gökay Dervişoğlu",
-  role: "Computer Engineering Student",
+  role: "Computer Engineer",
   avatar: "/images/avatar.jpg",
   email: "gokaydervisoglu@gmail.com",
   location: "Europe/Istanbul", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -67,11 +67,11 @@ const home: Home = {
     <>
       I'm a{" "}
       <Text as="span" size="xl" weight="strong">
-        Computer Engineering student
+        Computer Engineer
       </Text>{" "}
-      focused on software development and system design. I develop web services (APIs), backend
-      systems, and user-oriented applications. With a technical background supported by artificial
-      intelligence and computer vision projects, I build end-to-end software systems.
+      with hands-on experience in software development and system design. I have worked on web
+      services, backend systems, software testing processes, and system integration, and developed
+      various engineering projects in artificial intelligence and computer vision.
     </>
   ),
 };
@@ -97,10 +97,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Computer Engineering student focused on software development and system design. Experienced
-        in developing web services (APIs), backend systems, and user-oriented applications. With a
-        technical background supported by artificial intelligence and computer vision projects,
-        capable of building end-to-end software systems.
+        Computer Engineer with hands-on experience in software development and system design.
+        Worked on web services, backend systems, software testing processes, and system
+        integration. Developed various engineering projects in artificial intelligence and computer
+        vision.
       </>
     ),
   },
@@ -114,11 +114,9 @@ const about: About = {
         role: "Software Test Intern · Data & TV Solutions",
         location: "Istanbul, Turkey",
         achievements: [
-          <>Designed and executed Web Service (API) and UI test scenarios.</>,
-          <>
-            Reviewed the test automation framework and contributed to system analysis and defect
-            verification processes.
-          </>,
+          <>Developed and improved UI test automation scenarios using Selenium and Playwright.</>,
+          <>Performed REST API testing, defect verification, and regression testing.</>,
+          <>Contributed to the test automation infrastructure using Git, Jira, and CI/CD processes.</>,
         ],
         images: [],
       },
@@ -128,8 +126,14 @@ const about: About = {
         role: "Cyber Security Intern",
         location: "Istanbul, Turkey",
         achievements: [
-          <>Worked on cyber security and data management processes.</>,
-          <>Performed log analysis and reviewed fundamental security procedures.</>,
+          <>Configured agents, log monitoring, and alert mechanisms on Dataskope and VDAM.</>,
+          <>
+            Performed data flow and integration testing on SQL Server, Oracle Database, and
+            Elasticsearch.
+          </>,
+          <>
+            Conducted Docker-based installation and integration work for Data Touch and Data Craft.
+          </>,
         ],
         images: [],
       },
@@ -207,13 +211,9 @@ const about: About = {
         images: [],
       },
       {
-        title: "Tools",
-        description: <>Development tools and platforms I work with regularly.</>,
+        title: "Tools & Systems",
+        description: <>Tools and systems I work with regularly.</>,
         tags: [
-          {
-            name: "Docker",
-            icon: "docker",
-          },
           {
             name: "Git",
             icon: "git",
@@ -223,42 +223,46 @@ const about: About = {
             icon: "github",
           },
           {
-            name: "Linux",
-            icon: "linux",
+            name: "Jira",
+            icon: "jira",
           },
           {
-            name: "VS Code",
-            icon: "vscode",
+            name: "CI/CD",
+            icon: "recurrent",
+          },
+          {
+            name: "Docker",
+            icon: "docker",
+          },
+          {
+            name: "Linux",
+            icon: "linux",
           },
         ],
         images: [],
       },
       {
-        title: "Software Development",
-        description: <>Software development areas I am experienced in.</>,
+        title: "Test & Automation",
+        description: <>Test automation frameworks and API testing tools I use.</>,
         tags: [
           {
-            name: "API",
-            icon: "serverStack",
+            name: "Selenium",
+            icon: "selenium",
           },
           {
-            name: "Backend",
-            icon: "server",
-          },
-          {
-            name: "Testing",
+            name: "Playwright",
             icon: "testing",
           },
           {
-            name: "System Design",
-            icon: "systemDesign",
+            name: "REST API",
+            icon: "serverStack",
           },
         ],
         images: [],
       },
       {
         title: "Artificial Intelligence",
-        description: <>AI frameworks and neural network architectures I work with.</>,
+        description: <>AI frameworks I work with, including basic CNN/LSTM applications.</>,
         tags: [
           {
             name: "PyTorch",

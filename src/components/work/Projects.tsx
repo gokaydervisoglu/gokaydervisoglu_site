@@ -1,6 +1,6 @@
 import { getPosts } from "@/utils/utils";
-import { Row } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
+import styles from "./Projects.module.scss";
 
 interface ProjectsProps {
   range?: [number, number?];
@@ -28,7 +28,7 @@ export function Projects({ range, exclude, locale = "en" }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Row fillWidth gap="l" wrap paddingX="l">
+    <div className={styles.grid}>
       {displayedProjects.map((post) => (
         <ProjectCard
           key={post.slug}
@@ -39,6 +39,6 @@ export function Projects({ range, exclude, locale = "en" }: ProjectsProps) {
           date={post.metadata.publishedAt}
         />
       ))}
-    </Row>
+    </div>
   );
 }
