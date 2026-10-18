@@ -51,6 +51,8 @@ import {
   SiLinux,
   SiApachemaven,
   SiPytorch,
+  SiSelenium,
+  SiJira,
 } from "react-icons/si";
 
 import {
@@ -117,6 +119,8 @@ export const iconLibrary: Record<string, IconType> = {
   java: DiJava,
   csharp: SiCplusplus,
   pytorch: SiPytorch,
+  selenium: SiSelenium,
+  jira: SiJira,
   vscode: VscCode,
   sql: HiOutlineCircleStack,
   server: HiOutlineServer,

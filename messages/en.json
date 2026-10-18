@@ -9,26 +9,26 @@
     "contact": "Contact"
   },
   "person": {
-    "role": "Computer Engineering Student"
+    "role": "Computer Engineer"
   },
   "home": {
     "label": "Home",
     "title": "Gökay Dervişoğlu | Portfolio",
-    "description": "Portfolio website showcasing my work as a Computer Engineering Student",
+    "description": "Portfolio website showcasing my work as a Computer Engineer",
     "headline": "Hello! I'm Gökay Dervişoğlu",
     "sublinePre": "I'm a ",
-    "sublineStrong": "Computer Engineering student",
-    "sublinePost": " focused on software development and system design. I develop web services (APIs), backend systems, and user-oriented applications. With a technical background supported by artificial intelligence and computer vision projects, I build end-to-end software systems.",
+    "sublineStrong": "Computer Engineer",
+    "sublinePost": " with hands-on experience in software development and system design. I have worked on web services, backend systems, software testing processes, and system integration, and developed various engineering projects in artificial intelligence and computer vision.",
     "viewProjects": "View Projects",
     "getInTouch": "Get In Touch"
   },
   "about": {
     "label": "About",
     "title": "About – Gökay Dervişoğlu",
-    "description": "Meet Gökay Dervişoğlu, Computer Engineering Student from Trabzon, Turkey",
+    "description": "Meet Gökay Dervişoğlu, Computer Engineer from Trabzon, Turkey",
     "intro": {
       "title": "Introduction",
-      "description": "Computer Engineering student focused on software development and system design. Experienced in developing web services (APIs), backend systems, and user-oriented applications. With a technical background supported by artificial intelligence and computer vision projects, capable of building end-to-end software systems."
+      "description": "Computer Engineer with hands-on experience in software development and system design. Worked on web services, backend systems, software testing processes, and system integration. Developed various engineering projects in artificial intelligence and computer vision."
     },
     "work": {
       "title": "Work Experience",
@@ -38,16 +38,18 @@
           "timeframe": "February – May 2026 · July – August 2026",
           "role": "Software Test Intern · Data & TV Solutions",
           "location": "Istanbul, Turkey",
-          "achievement1": "Designed and executed Web Service (API) and UI test scenarios.",
-          "achievement2": "Reviewed the test automation framework and contributed to system analysis and defect verification processes."
+          "achievement1": "Developed and improved UI test automation scenarios using Selenium and Playwright.",
+          "achievement2": "Performed REST API testing, defect verification, and regression testing.",
+          "achievement3": "Contributed to the test automation infrastructure using Git, Jira, and CI/CD processes."
         },
         "kafein": {
           "company": "Kafein Information Technologies Inc.",
           "timeframe": "June – August 2025",
           "role": "Cyber Security Intern",
           "location": "Istanbul, Turkey",
-          "achievement1": "Worked on cyber security and data management processes.",
-          "achievement2": "Performed log analysis and reviewed fundamental security procedures."
+          "achievement1": "Configured agents, log monitoring, and alert mechanisms on Dataskope and VDAM.",
+          "achievement2": "Performed data flow and integration testing on SQL Server, Oracle Database, and Elasticsearch.",
+          "achievement3": "Conducted Docker-based installation and integration work for Data Touch and Data Craft."
         }
       }
     },
@@ -85,16 +87,16 @@
         "description": "Programming languages I use for software development."
       },
       "tools": {
-        "title": "Tools",
-        "description": "Development tools and platforms I work with regularly."
+        "title": "Tools & Systems",
+        "description": "Tools and systems I work with regularly."
       },
-      "softwareDevelopment": {
-        "title": "Software Development",
-        "description": "Software development areas I am experienced in."
+      "testAutomation": {
+        "title": "Test & Automation",
+        "description": "Test automation frameworks and API testing tools I use."
       },
       "artificialIntelligence": {
         "title": "Artificial Intelligence",
-        "description": "AI frameworks and neural network architectures I work with."
+        "description": "AI frameworks I work with, including basic CNN/LSTM applications."
       }
     },
     "scheduleCall": "Schedule a call"

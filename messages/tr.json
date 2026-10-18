@@ -9,26 +9,26 @@
     "contact": "İletişim"
   },
   "person": {
-    "role": "Bilgisayar Mühendisliği Öğrencisi"
+    "role": "Bilgisayar Mühendisi"
   },
   "home": {
     "label": "Ana Sayfa",
     "title": "Gökay Dervişoğlu | Portfolyo",
-    "description": "Bilgisayar Mühendisliği öğrencisi olarak çalışmalarımı sergileyen portfolyo web sitesi",
+    "description": "Bilgisayar Mühendisi olarak çalışmalarımı sergileyen portfolyo web sitesi",
     "headline": "Merhaba! Ben Gökay Dervişoğlu",
-    "sublinePre": "Yazılım geliştirme ve sistem tasarımına odaklanan bir ",
-    "sublineStrong": "Bilgisayar Mühendisliği öğrencisiyim",
-    "sublinePost": ". Web servisleri (API), backend sistemler ve kullanıcı odaklı uygulamalar geliştiriyorum. Yapay zeka ve bilgisayarlı görü projeleriyle desteklenen teknik altyapımla uçtan uca yazılım sistemleri kuruyorum.",
+    "sublinePre": "Yazılım geliştirme ve sistem tasarımında uygulamalı deneyime sahip bir ",
+    "sublineStrong": "Bilgisayar Mühendisiyim",
+    "sublinePost": ". Web servisleri, backend sistemler, yazılım test süreçleri ve sistem entegrasyonu üzerine çalıştım; yapay zeka ve bilgisayarlı görü alanında çeşitli mühendislik projeleri geliştirdim.",
     "viewProjects": "Projeleri Gör",
     "getInTouch": "İletişime Geç"
   },
   "about": {
     "label": "Hakkımda",
     "title": "Hakkımda – Gökay Dervişoğlu",
-    "description": "Trabzon, Türkiye'den Bilgisayar Mühendisliği öğrencisi Gökay Dervişoğlu ile tanışın",
+    "description": "Trabzon, Türkiye'den Bilgisayar Mühendisi Gökay Dervişoğlu ile tanışın",
     "intro": {
       "title": "Tanıtım",
-      "description": "Yazılım geliştirme ve sistem tasarımına odaklanan bir Bilgisayar Mühendisliği öğrencisi. Web servisleri (API), backend sistemler ve kullanıcı odaklı uygulamalar geliştirme deneyimine sahip. Yapay zeka ve bilgisayarlı görü projeleriyle desteklenen teknik altyapısıyla uçtan uca yazılım sistemleri kurabilme yeteneğine sahip."
+      "description": "Yazılım geliştirme ve sistem tasarımında uygulamalı deneyime sahip Bilgisayar Mühendisi. Web servisleri, backend sistemler, yazılım test süreçleri ve sistem entegrasyonu üzerine çalıştı. Yapay zeka ve bilgisayarlı görü alanında çeşitli mühendislik projeleri geliştirdi."
     },
     "work": {
       "title": "İş Deneyimi",
@@ -38,16 +38,18 @@
           "timeframe": "Şubat – Mayıs 2026 · Temmuz – Ağustos 2026",
           "role": "Yazılım Test Stajyeri · Data & TV Solutions",
           "location": "İstanbul, Türkiye",
-          "achievement1": "Web Servis (API) ve UI test senaryoları tasarlandı ve yürütüldü.",
-          "achievement2": "Test otomasyon çerçevesi incelendi; sistem analizi ve hata doğrulama süreçlerine katkıda bulunuldu."
+          "achievement1": "Selenium ve Playwright ile UI test otomasyon senaryoları geliştirildi ve iyileştirildi.",
+          "achievement2": "REST API testleri, hata doğrulama ve regresyon testleri gerçekleştirildi.",
+          "achievement3": "Git, Jira ve CI/CD süreçleriyle test otomasyon altyapısına katkı sağlandı."
         },
         "kafein": {
           "company": "Kafein Bilişim A.Ş.",
           "timeframe": "Haziran – Ağustos 2025",
           "role": "Siber Güvenlik Stajyeri",
           "location": "İstanbul, Türkiye",
-          "achievement1": "Siber güvenlik ve veri yönetimi süreçleri üzerinde çalışıldı.",
-          "achievement2": "Log analizi yapıldı ve temel güvenlik prosedürleri incelendi."
+          "achievement1": "Dataskope ve VDAM üzerinde ajan yapılandırması, log izleme ve alarm mekanizmaları kuruldu.",
+          "achievement2": "SQL Server, Oracle Database ve Elasticsearch üzerinde veri akışı ve entegrasyon testleri yapıldı.",
+          "achievement3": "Data Touch ve Data Craft için Docker tabanlı kurulum ve entegrasyon çalışmaları gerçekleştirildi."
         }
       }
     },
@@ -85,16 +87,16 @@
         "description": "Yazılım geliştirmede kullandığım programlama dilleri."
       },
       "tools": {
-        "title": "Araçlar",
-        "description": "Düzenli olarak çalıştığım geliştirme araçları ve platformlar."
+        "title": "Araçlar ve Sistemler",
+        "description": "Düzenli olarak çalıştığım araçlar ve sistemler."
       },
-      "softwareDevelopment": {
-        "title": "Yazılım Geliştirme",
-        "description": "Deneyim sahibi olduğum yazılım geliştirme alanları."
+      "testAutomation": {
+        "title": "Test ve Otomasyon",
+        "description": "Kullandığım test otomasyon çerçeveleri ve API test araçları."
       },
       "artificialIntelligence": {
         "title": "Yapay Zeka",
-        "description": "Çalıştığım yapay zeka çerçeveleri ve sinir ağı mimarileri."
+        "description": "Temel CNN/LSTM uygulamaları dahil çalıştığım yapay zeka çerçeveleri."
       }
     },
     "scheduleCall": "Görüşme planla"
